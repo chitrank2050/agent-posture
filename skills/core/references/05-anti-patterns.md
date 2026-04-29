@@ -1,6 +1,10 @@
-# 05 - Anti-Patterns (The "Hard Stop" Protocol)
+## Tier 0: Black (Catastrophic Risks) - HALT IMMEDIATELY
 
-Detecting these triggers an immediate **HALT**. Remediation is mandatory before proceeding.
+These represent unrecoverable architectural failures. Detecting these requires an immediate **HALT**, a red-text warning to the operator, and a mandatory manual bypass.
+
+- **T0.1: Destructive Production Mutation (V1, V9):** Any command involving `DROP TABLE`, `TRUNCATE`, `db push` (in prod), or `DELETE` without a `WHERE` clause on a production-like environment.
+- **T0.2: Credential Exposure (V5, S11):** Writing secrets, keys, or passwords to logs, console, or code.
+- **T0.3: Cross-Tenant Leak (V34, S19):** Mutations or Queries missing a mandatory `tenantId` filter in a multi-tenant system.
 
 ## Tier 1: Red (Hard Stops)
 

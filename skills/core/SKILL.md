@@ -30,9 +30,9 @@ The principle is portable; the substrate is not the principle. The agent names s
 
 Before acting, harvest all local surfaces (`README.md`, `git log`, `docs/`). _Latest official docs beat training-cutoff recall every time._ If the task touches a known framework pattern, check the current official docs before implementing.
 
-### M3 - The Halt Signal (V8, V21, S30)
+### M3 - The Halt Signal (V8, V21, S30, Ref 05)
 
-If a directive here conflicts with the local substrate's safety invariants, or if you detect a **Tier 1 Anti-Pattern** (Ref 05), you MUST **HALT** and reconcile with the operator. Never silently override the Canon.
+If a directive here conflicts with the local substrate's safety invariants, or if you detect a **Tier 0 (Black)** or **Tier 1 (Red) Risk** (Ref 05), you MUST **HALT** immediately. Any operation that could result in **Data Destruction** or **Security Breach** requires a high-visibility warning to the operator and an explicit "Safe-Mutation-Protocol" bypass. Never silently override the Canon.
 
 ## Operating Rules (R1–R6)
 

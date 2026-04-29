@@ -24,6 +24,10 @@ Load this skill when:
 
 ## Operating Rules (R1–R5)
 
+### R0 - The Production Lock (V1, V9, Ref 05)
+
+**Production data is an immutable monument.** You MUST assume any database operation is running against production. **Hard-Ban:** Never execute `DROP`, `TRUNCATE`, or `DELETE` (without `WHERE`) in any context without an explicit, multi-step **Safe-Mutation-Protocol**. Always perform a `Dry Run` or `Count` before executing a real mutation. If a command could potentially delete data, you MUST **HALT** and explain the risk.
+
 ### R1 - Migration Sovereignty (V1, V7, S30)
 
 Production data is sacred. **Hard-Ban:** Never use `db push` or untracked schema changes. Every mutation must ship as a named, version-controlled migration. For large tables, migrations must be "Zero-Downtime" (e.g., add column, then backfill, then drop old).
