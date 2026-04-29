@@ -20,10 +20,10 @@ The foundational logic that governs **every** interaction.
 - **The Voice Contract (Ref 03)**: A strict psychological agreement on how the agent communicates and when it must **HALT**.
 - **The Mindset (Ref 08)**: The psychological posture of a Principal Engineer.
 
-### 2. Domain Addons (`skills/addons/`)
+### 2. Domain Addons (`skills/backend/`, `skills/frontend/`)
 Specialized technical specifications for complex systems.
 - **Backend Addon**: 150+ lines of rigor covering transactions, observability, and concurrency.
-- **Frontend Addon**: (Coming Soon) React/Next.js performance and accessibility specs.
+- **Frontend Addon**: React/Next.js performance and accessibility specs.
 
 ---
 

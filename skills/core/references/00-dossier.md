@@ -43,9 +43,36 @@ This is the absolute "Constitution" of the Principal Engineering mindset. Every 
 
 ## Observable Signatures (S1-S41)
 
-- **S1-S10: Core Rigor** (Lookup Maps, Tie-Breakers, Closed-Form, Surgical Diffs, Zod-at-border, Domain-Errors, Early Return, Correlation IDs, Constant Derivation, Idempotency Keys).
-- **S11-S20: Systems** (PII Scrubbing, Constant-Time Crypto, Backpressure, Jittered Retries, Circuit Breakers, Shadowing Prevention, Typed Env, Intent-First Comments, Transaction Wrappers, Era-Matching).
-- **S21-S30: Git & Flow** (Semantic PR Titles, Branch Hygiene, Test-Gap Highlighting, JSON Logging, Dependency Pinning, Error Wrapping, Floating Promise Prevention, Immutable Default, Big-O Docs, The Halt Signal).
+- **S1: Lookup Maps** - Use object/map lookups over conditional branching.
+- **S2: Deterministic Tie-Breaking** - Every sort has a final unique ID tie-breaker.
+- **S3: Closed-Form Logic** - Prefer mathematical formulas over iterative loops.
+- **S4: Surgical Diffs** - PRs are exactly the size of the conceptual change.
+- **S5: Zod-at-Border** - Enforce runtime validation for all external inputs.
+- **S6: Domain-Typed Errors** - Use discriminated unions for errors, not strings.
+- **S7: Early Return** - Fail fast and return early to minimize nesting.
+- **S8: Correlation IDs** - Propagate `X-Correlation-ID` across all service boundaries.
+- **S9: Constant Derivation** - Document the "Why" behind magic numbers.
+- **S10: Idempotency Keys** - Every write-operation supports safe retries.
+- **S11: PII Scrubbing** - Automatically mask sensitive data in logs.
+- **S12: Constant-Time Crypto** - Use timing-safe primitives for secret comparison.
+- **S13: Backpressure Aware** - Respect downstream saturation signals.
+- **S14: Jittered Retries** - Exponential backoff with randomness for all I/O.
+- **S15: Circuit Breakers** - Stop calling failing dependencies immediately.
+- **S16: Shadowing Prevention** - Never name locals after Types or Globals.
+- **S17: Typed Environment** - Validate and type `process.env` at boot.
+- **S18: Intent-First Comments** - Explain the _Why_ in prose, the _How_ in code.
+- **S19: Transaction Wrappers** - Multi-table mutations are atomic or nothing.
+- **S20: Era-Matching** - Match the idiom of the nearest sibling file.
+- **S21: Semantic PR Titles** - Conventional commits enforced at the PR level.
+- **S22: Branch Hygiene** - Short-lived feature branches; no long-running "dev".
+- **S23: Test-Gap Highlighting** - Explicitly name what is NOT tested in a PR.
+- **S24: JSON Logging** - Structured logging as the default for observability.
+- **S25: Dependency Pinning** - Lockfiles are sacred; use exact versions for core deps.
+- **S26: Error Wrapping** - Provide context when bubble-up errors occur.
+- **S27: Floating Promise Prevention** - Every promise must be awaited or handled.
+- **S28: Immutable by Default** - Use `readonly` and `const` until mutation is proven.
+- **S29: Big-O Documentation** - Name the complexity class of non-trivial helpers.
+- **S30: The Halt Signal** - Stop and reconcile when an anti-pattern is detected.
 - **S31: Cursor-Based Pagination** - Use cursors over offsets for scale.
 - **S32: Domain Model Separation** - `priceCents` instead of `price` floats.
 - **S33: Barrel File Prevention** - Flag application-level barrels (tree-shaking killers).

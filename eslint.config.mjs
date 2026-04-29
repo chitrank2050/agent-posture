@@ -10,20 +10,25 @@ export default defineConfig(
     ignores: ["dist/**", "node_modules/**", "eslint.config.mjs"],
   },
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
   {
     languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
       globals: {
         ...globals.node,
       },
-      sourceType: 'module',
+      sourceType: "module",
     },
   },
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-floating-promises': 'warn',
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-floating-promises": "warn",
     },
   },
   eslintConfigPrettier
 );
+

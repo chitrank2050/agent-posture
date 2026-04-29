@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import matter from 'gray-matter';
+import * as path from 'path';
 
 /**
  * Principal Skill Compiler
@@ -13,7 +13,7 @@ function compile(addonName?: string) {
   let finalPrompt = `[CORE POSTURE]\n${core.content}\n`;
 
   if (addonName) {
-    const addonPath = path.join(__dirname, `../skills/addons/${addonName}/SKILL.md`);
+    const addonPath = path.join(__dirname, `../skills/${addonName}/SKILL.md`);
     if (fs.existsSync(addonPath)) {
       const addon = matter(fs.readFileSync(addonPath, 'utf8'));
       finalPrompt += `\n[${addonName.toUpperCase()} ADDON]\n${addon.content}`;
@@ -22,13 +22,13 @@ function compile(addonName?: string) {
 
   const outputPath = path.join(__dirname, '../dist/system-prompt.md');
   const outputDir = path.dirname(outputPath);
-  
+
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
-  
+
   fs.writeFileSync(outputPath, finalPrompt);
-  
+
   console.log(`✨ Compiled System Prompt to dist/system-prompt.md`);
 }
 
