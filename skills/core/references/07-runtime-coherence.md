@@ -1,21 +1,26 @@
-# 07 - Runtime Coherence
+# 07 — Runtime Coherence (R0—R3 Classes)
 
-Code must respect its execution model (V4).
+Code must respect its execution model (V4). Not all runtimes sustain shared state.
 
-## 1. Long-Lived (Server)
+## Runtime Classes
 
-- Use connection pools.
-- Handle graceful shutdown (SIGTERM).
-- In-memory cache is safe but must be bounded (LRU).
+| Class                       | Description                         | Persistence Idiom                  | Posture                                        |
+| :-------------------------- | :---------------------------------- | :--------------------------------- | :--------------------------------------------- |
+| **R0: Local/CLI**           | Short-lived process (Node/Bun).     | File system, env vars.             | **Direct.** Disk is safe for state.            |
+| **R1: Server (Node)**       | Long-lived, persistent process.     | Connection pools, in-memory cache. | **Managed.** Use pools and pools only.         |
+| **R2: Serverless (Lambda)** | Ephemeral, stateless per-request.   | External KV, No pools.             | **Stateless.** Assume local memory is cleared. |
+| **R3: Edge (Workers)**      | Global, zero cold-start, ephemeral. | KV, Durable Objects.               | **Lightweight.** Minimize bundle size and I/O. |
 
-## 2. Ephemeral (Serverless/Lambda)
+## The Shared State Rule
 
-- No in-process connection pools (exhaustion risk).
-- No long-lived in-memory state.
-- Optimize for cold-start (minimal imports).
+Before adding a cache or a global variable, ask: **"Does this runtime sustain shared state?"**
 
-## 3. Distributed (Edge/Multi-Region)
+- If R2/R3: Local state is an anti-pattern (V27). Reach for Redis/Upstash.
+- If R1: In-memory is safe but must be bounded (V14).
 
-- Assume eventual consistency unless explicitly transactional.
-- Propagate Correlation IDs (S8) across boundaries.
-- Retry with Jitter on all cross-region calls.
+## Correlation Propagation (S8)
+
+Across all classes, you MUST propagate the `X-Correlation-ID`.
+
+- **R2/R3:** Pass via headers in `fetch`.
+- **R1:** Pass via `AsyncLocalStorage` or context objects.

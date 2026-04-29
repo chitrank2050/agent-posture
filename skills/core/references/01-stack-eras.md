@@ -1,17 +1,17 @@
-# 01 - Stack Eras (System Signatures)
+# 01 — Stack Eras (The Full Spectrum)
 
-Identify the Era of the codebase before you propose changes. Eras are defined by their **System Architecture**, not just their language.
+Identify the Era of the codebase to prevent "Paradigm Soup." Match the idiom of the Era (V36).
 
-| Era                     | Architecture                             | Data Idiom                                           | Posture                                                            |
-| :---------------------- | :--------------------------------------- | :--------------------------------------------------- | :----------------------------------------------------------------- |
-| **A: Legacy**           | Monolithic, Stateful, On-prem.           | Raw SQL, Global state, Mutables.                     | **Preservation (V20).** Do not attempt "Global Modernization."     |
-| **B: Modern**           | Microservices, Cloud-native, Containers. | ORMs, Hooks, DI, Promises.                           | **Extension.** Enhance existing patterns; refactor adjacent logic. |
-| **C: Principal (2027)** | Distributed Edge, Stateless, Serverless. | Zod-at-border, Atomic Upserts, Eventual Consistency. | **Rigor.** Enforce the Dossier (V1-V20) on every new line.         |
+| Era                       | System Architecture                   | Signatures                                     | Posture                                                        |
+| :------------------------ | :------------------------------------ | :--------------------------------------------- | :------------------------------------------------------------- |
+| **A: Agentic (2027)**     | Streaming UI, Edge, Server Actions.   | `use server`, `Suspense`, Edge KV.             | **Innovation.** Enforce maximum Dossier rigor (V1-V36).        |
+| **B: Modern (2022+)**     | Cloud-native, Containers, App Router. | ESM, Hooks, DI, Promises.                      | **Extension.** Follow established framework patterns.          |
+| **C: Hybrid (2018-2022)** | Pages Router, Microservices, SPAs.    | `getServerSideProps`, Webpack, Mix of ESM/CJS. | **Preservation.** Do not attempt a "Global Migration" (V29).   |
+| **D: Legacy (<2018)**     | Monolithic, On-prem, CJS.             | `require()`, `var`, Callbacks, jQuery.         | **Restoration.** Match local idiom strictly. No new paradigms. |
 
-## Observable System Signatures
+## Observable Signatures
 
-- **Era A Signatures:** `require()`, `var`, `.then()` without catch, `global.`, `/tmp` usage.
-- **Era B Signatures:** `import`, `async/await`, `interface`, `.env` files, `docker-compose`.
-- **Era C Signatures:** `z.parse()`, `upsert`, `EdgeRuntime`, `CorrelationID`, `Immutable Data`.
+- **Era A (Agentic):** `export const runtime = 'edge'`, RSCs, AI-streaming primitives.
+- **Era D (Legacy):** `module.exports`, `.ajax()`, Global styles, Enzyme tests.
 
-**Rule:** New modules are always Era C. Existing modules follow their Era signatures to prevent "Paradigm Soup" (Ref 05).
+**The "Paradigm Soup" Rule:** Never introduce an Era A pattern (e.g., Server Actions) into an Era D codebase without a funded migration plan (V26).
