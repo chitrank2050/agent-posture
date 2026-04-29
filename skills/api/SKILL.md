@@ -1,9 +1,10 @@
 ---
-name: posture-api
-version: 1.0.0
+name: api
 description: API-Grade technical posture. Activate this for any task involving REST, GraphQL, OpenAPI, or Bruno collections. Enforce Contract-First design, response normalization, and idempotency keys. If it's a boundary, it must be stable and versioned.
-extends: posture-core
-author: chitrank2050
+metadata:
+  version: 1.0.0
+  extends: posture-core
+  author: chitrank2050
 ---
 
 # Technical API Posture 🔌🛰️

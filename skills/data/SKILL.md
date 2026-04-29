@@ -1,9 +1,10 @@
 ---
-name: posture-data
-version: 1.0.0
+name: data
 description: Data-Grade technical posture. Activate this for any task involving Databases, Prisma, Migrations, or Data Modeling. Enforce schema integrity, multi-tenant isolation, and deterministic seeding. If it's in the DB, it must be immutable and isolated.
-extends: posture-core
-author: chitrank2050
+metadata:
+  version: 1.0.0
+  extends: posture-core
+  author: chitrank2050
 ---
 
 # Technical Data Posture 🗄️🛡️

@@ -1,9 +1,10 @@
 ---
-name: posture-skill-creator
-version: 1.0.0
+name: skill-creator
 description: Meta-Grade engineering posture for creating high-rigor agentic skills. Activate this for any task involving the creation, refactoring, or auditing of .md or .json files within the /skills directory. Enforce procedural logic, metadata density, and constitutional alignment.
-extends: posture-core
-author: chitrank2050
+metadata:
+  version: 1.0.0
+  extends: posture-core
+  author: chitrank2050
 ---
 
 # Technical Skill Architecture (Skill Creator) 🧠🛠️

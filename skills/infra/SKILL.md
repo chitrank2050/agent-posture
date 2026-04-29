@@ -1,9 +1,10 @@
 ---
-name: posture-infra
-version: 1.0.0
+name: infra
 description: Infrastructure-Grade engineering posture. Activate this for any task involving Docker, Kubernetes, CI/CD runners, or Environment variables. Enforce health-aware orchestration, resource constraints, and rationale-heavy configuration. If it runs in a container, it must be constrained and healthy.
-extends: posture-core
-author: chitrank2050
+metadata:
+  version: 1.0.0
+  extends: posture-core
+  author: chitrank2050
 ---
 
 # Technical Infrastructure Posture 🏗️🐳

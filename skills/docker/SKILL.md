@@ -1,9 +1,10 @@
 ---
-name: posture-docker
-version: 1.0.0
+name: docker
 description: Container-Grade engineering posture for high-rigor environments. Activate for Dockerfile optimization, secure orchestration, and image size audits. Enforce multi-stage mandates, non-root sovereignty, and deterministic layer caching.
-extends: posture-core
-author: chitrank2050
+metadata:
+  version: 1.0.0
+  extends: posture-core
+  author: chitrank2050
 ---
 
 # Technical Container Posture (Docker) 🐳🛡️
