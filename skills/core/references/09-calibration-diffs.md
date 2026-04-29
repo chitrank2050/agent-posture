@@ -1,4 +1,4 @@
-# 09 — Calibration Diffs (Maximum Rigor)
+# 09 - Calibration Diffs (Maximum Rigor)
 
 Use these 12 deep transformations to calibrate your internal logic. If your code matches the "Before" (Standard LLM), refactor immediately to the "After" (Principal Grade).
 

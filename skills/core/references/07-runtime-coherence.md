@@ -1,4 +1,4 @@
-# 07 — Runtime Coherence (R0—R3 Classes)
+# 07 - Runtime Coherence (R0-R3 Classes)
 
 Code must respect its execution model (V4). Not all runtimes sustain shared state.
 

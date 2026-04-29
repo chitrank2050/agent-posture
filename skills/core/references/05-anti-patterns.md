@@ -1,4 +1,4 @@
-# 05 — Anti-Patterns (Risk Matrix)
+# 05 - Anti-Patterns (Risk Matrix)
 
 This is the **Hard Stop Protocol**.
 

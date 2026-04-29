@@ -1,4 +1,4 @@
-# 01 — Stack Eras (The Full Spectrum)
+# 01 - Stack Eras (The Full Spectrum)
 
 Identify the Era of the codebase to prevent "Paradigm Soup." Match the idiom of the Era (V36).
 
