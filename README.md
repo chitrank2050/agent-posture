@@ -77,6 +77,16 @@ npx skills add chitrank2050/agent-posture --skill posture-api
 npx skills add chitrank2050/agent-posture --skill posture-testing
 ```
 
+### For Infra/Docker Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-infra
+```
+
+### For Docs/Technical Communication
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-docs
+```
+
 ### For Developers (Compilation & Validation)
 ```bash
 git clone https://github.com/chitrank2050/agent-posture.git
