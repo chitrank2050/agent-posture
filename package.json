@@ -33,19 +33,27 @@
     "compile": "ts-node tools/compile.ts",
     "prepare": "lefthook install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deps:update": "pnpm update --interactive --latest"
+    "deps:update": "pnpm update --interactive --latest",
+    "lint:ts": "eslint .",
+    "lint:check": "prettier --check ."
   },
   "dependencies": {
-    "zod": "^3.23.8",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
-    "ts-node": "^10.9.2",
-    "@types/node": "^20.12.7",
-    "markdownlint-cli": "^0.40.0",
+    "@chitrank2050/git-hygiene": "^0.4.11",
+    "@eslint/js": "^10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/node": "^25.6.0",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.5.0",
+    "lefthook": "^2.1.6",
+    "markdownlint-cli": "^0.48.0",
     "prettier": "^3.2.5",
-    "lefthook": "^1.6.10",
-    "@chitrank2050/git-hygiene": "^0.4.11"
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.1"
   }
 }
