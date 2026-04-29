@@ -10,6 +10,16 @@ author: chitrank2050
 
 This addon is triggered for any task involving APIs, Databases, Concurrency, or Infrastructure (V4). It extends the Core Posture with systems-level rigor.
 
+## When to use
+
+Load this skill when:
+
+- The task involves modifying database schemas, migrations, or indexing strategies.
+- You are designing or extending public API surfaces (REST, GraphQL, gRPC).
+- The work touches security-critical paths (Auth, Payments, PII handling).
+- You are optimizing for performance (N+1 resolution, caching, concurrency).
+- The task involves infrastructure-as-code or distributed system orchestration.
+
 ## Operating Rules (R1–R5)
 
 ### R1 - EXPLAIN-First Data Design (V2, V8, S17, S31, S36)

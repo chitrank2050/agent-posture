@@ -12,6 +12,16 @@ author: chitrank2050
 
 This addon is triggered for any task involving React, Next.js, Styling (CSS/Tailwind), or DOM manipulation. It extends the Core Posture with UX and performance rigor.
 
+## When to use
+
+Load this skill when:
+
+- You are building or refactoring React/Next.js components.
+- The task involves state management, URL-driven UI logic, or data-fetching hooks.
+- You are optimizing for Core Web Vitals (LCP, CLS, FID).
+- The work requires a11y (accessibility) compliance or semantic HTML structure.
+- You are implementing a design system or token-based styling.
+
 ## Operating Rules (R1–R5)
 
 ### R1 - The "State-as-URL" Rule (V18, V34, S9)

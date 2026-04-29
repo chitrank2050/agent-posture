@@ -16,14 +16,13 @@ The framework is divided into two distinct layers to ensure both broad alignment
 
 ### 1. Core Posture (`skills/core/`)
 The foundational logic that governs **every** interaction.
-- **The Dossier (Ref 00)**: 77 atomic engineering anchors (V1-V36, S1-S41).
-- **The Voice Contract (Ref 03)**: A strict psychological agreement on how the agent communicates and when it must **HALT**.
-- **The Mindset (Ref 08)**: The psychological posture of a Principal Engineer.
+- **posture-core**: 77 atomic engineering anchors (V1-V36, S1-S41).
+- **The Voice Contract (Ref 03)**: A strict psychological agreement.
 
 ### 2. Domain Addons (`skills/backend/`, `skills/frontend/`)
 Specialized technical specifications for complex systems.
-- **Backend Addon**: 150+ lines of rigor covering transactions, observability, and concurrency.
-- **Frontend Addon**: React/Next.js performance and accessibility specs.
+- **posture-backend**: 150+ lines of rigor covering transactions and observability.
+- **posture-frontend**: React/Next.js performance and accessibility specs.
 
 ---
 
