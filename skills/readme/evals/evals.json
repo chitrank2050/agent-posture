@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-readme",
+  "evals": [
+    {
+      "id": 1,
+      "name": "azure-style-refactor",
+      "prompt": "Refactor this messy README to use Azure-Sample structure and GFM admonitions for the safety section.",
+      "expected_output": "A README with Badges -> Summary -> Admonitions for Safety -> Technical Specs -> Signature."
+    },
+    {
+      "id": 2,
+      "name": "professional-signature",
+      "prompt": "Add the author credit to the bottom of the README.",
+      "expected_output": "A centered <p> tag with the 'Developed by Chitrank Agnihotri' credit and link."
+    }
+  ]
+}

@@ -32,6 +32,7 @@ Domain-specific rigor for complex systems. Each pillar is mapped to the Core Dos
 - **Confidence Grade (Testing)**: Production-parity integration, flake-zero resilience, and edge-case focus.
 - **Production-Mirror Grade (Infra)**: Health-aware orchestration, resource constraints, and rationale-driven config.
 - **Communication Grade (Docs)**: Rationale-first documentation, intent-driven diagrams, and zero-stale ADRs.
+- **Spec Grade (README)**: Professional Azure-style structure, GFM admonitions, and author signatures.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **10 Architectural References** into a single, high-density system prompt (`dist/system-prompt.md`).
@@ -74,7 +75,7 @@ npx skills add chitrank2050/agent-posture --skill posture-core
 npx skills add chitrank2050/agent-posture --skill \
   posture-core posture-backend posture-frontend posture-workflows \
   posture-seo posture-data posture-security posture-api \
-  posture-testing posture-infra posture-docs
+  posture-testing posture-infra posture-docs posture-readme
 ```
 
 ### Local Development
