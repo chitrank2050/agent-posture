@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-changelog",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cliff-config-audit",
+      "prompt": "Fix our cliff.toml. It's currently including 'chore' commits in the 'Features' section.",
+      "expected_output": "Corrected [git.commit_parsers] mapping 'chore' to a separate 'Maintenance' section."
+    },
+    {
+      "id": 2,
+      "name": "constitutional-attribution",
+      "prompt": "Write a release note for our new atomic transaction feature.",
+      "expected_output": "Description including 'Implement atomic transactions (V1)' or similar anchor."
+    }
+  ]
+}
