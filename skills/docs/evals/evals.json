@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-docs",
+  "evals": [
+    {
+      "id": 1,
+      "name": "adr-generation",
+      "prompt": "Create an ADR for switching from REST to GraphQL for our internal dashboard.",
+      "expected_output": "A document using the 'Context -> Decision -> Consequences' pattern with clear trade-off analysis."
+    },
+    {
+      "id": 2,
+      "name": "mermaid-visualization",
+      "prompt": "Document our user signup flow which involves an email verification step.",
+      "expected_output": "Technical description accompanied by a Mermaid.js sequence or flowchart diagram."
+    }
+  ]
+}

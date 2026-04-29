@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-infra",
+  "evals": [
+    {
+      "id": 1,
+      "name": "health-aware-compose",
+      "prompt": "Add a Redis service to our docker-compose.yml. It should be used by our 'app' service.",
+      "expected_output": "Redis service with healthcheck + 'app' service with 'depends_on: { redis: { condition: service_healthy } }'."
+    },
+    {
+      "id": 2,
+      "name": "resource-constrained-infra",
+      "prompt": "We are adding a Kafka broker to our dev stack. Configure it for a local laptop with 16GB RAM.",
+      "expected_output": "Kafka service with explicit memory/cpu limits (e.g., 512MB, 0.5 CPU) and a rationale comment."
+    }
+  ]
+}

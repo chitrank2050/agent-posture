@@ -30,6 +30,8 @@ Domain-specific rigor for complex systems.
 - **Zero-Trust Grade (Security)**: PII sanitization, immutable audit trails, and internal entitlements.
 - **Contract Grade (API)**: Idempotency keys, response normalization, and contract-first design.
 - **Confidence Grade (Testing)**: Production-parity integration, flake-zero resilience, and edge-case coverage.
+- **Production-Mirror Grade (Infra)**: Health-aware orchestration, resource constraints, and rationale-driven config.
+- **Communication Grade (Docs)**: Rationale-first documentation, intent-driven diagrams, and zero-stale invariants.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **9 architectural references** into a single, high-density system prompt.
