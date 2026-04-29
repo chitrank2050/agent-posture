@@ -3,30 +3,32 @@
 # Docs: https://lefthook.dev/configuration/
 
 # ─── pre-commit ──────────────────────────────────────────────
+# Runs in sequence: per-file linting and formatting.
 pre-commit:
   parallel: false
   commands:
-    # 1. Skill Validation - Ensures metadata matches Zod schema
-    validate-skills:
-      run: npm run validate
-
-    # 2. TypeScript files - Prettier format
+    # 1. TypeScript files - ESLint fix + Prettier format
     lint-ts:
-      glob: 'tools/**/*.ts'
-      run: npx prettier --write {staged_files}
+      glob: '**/*.ts'
+      run: pnpm exec eslint --fix {staged_files} && pnpm exec prettier --write {staged_files}
       stage_fixed: true
 
-    # 3. Markdown files - markdownlint fix + Prettier format
+    # 2. Markdown files - markdownlint fix + Prettier format
     lint-md:
       glob: '**/*.md'
-      run: npx markdownlint --fix {staged_files} && npx prettier --write {staged_files}
+      run: pnpm exec markdownlint --fix {staged_files} && pnpm exec prettier --write {staged_files}
       stage_fixed: true
 
-    # 4. JSON / YAML - Prettier format
+    # 3. JSON / YAML - Prettier format only
     lint-json-yml:
       glob: '**/*.{json,yml,yaml}'
-      run: npx prettier --write {staged_files}
+      run: pnpm exec prettier --write {staged_files}
       stage_fixed: true
+
+    # 4. GitHub Actions - Security linting (zizmor)
+    lint-actions:
+      glob: '.github/workflows/*.yml'
+      run: if command -v zizmor > /dev/null; then zizmor {staged_files}; else echo "zizmor not found, skipping actions lint."; fi
 
 # ─── commit-msg ──────────────────────────────────────────────
 # Enforces Conventional Commits format via git-hygiene.
@@ -36,9 +38,14 @@ commit-msg:
       run: npx git-hygiene commit {1}
 
 # ─── pre-push ────────────────────────────────────────────────
+# Ensures branch naming and basic validation.
 pre-push:
   parallel: true
   commands:
     # Ensure branch naming follows standards
     branch-name:
       run: npx git-hygiene branch
+
+    # Final validation check
+    validate:
+      run: pnpm run validate
