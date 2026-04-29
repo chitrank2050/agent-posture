@@ -51,3 +51,10 @@ A flaky test is worse than no test. Avoid `sleep()` or arbitrary timeouts; use p
 - [ ] **Edges**: Are there tests for at least 3 failure scenarios (timeout, validation, 403)?
 - [ ] **Reproduction**: If this is a fix, is there a test that failed before the code change?
 - [ ] **Resilience**: Are there any non-deterministic `sleep` calls?
+
+## Deep Reference Library
+
+- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `references/06-the-canon.md` - The Intellectual Compass (Testing theory).
+- `references/08-principal-mindset.md` - Confidence-based rule precedence.
+- `references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.

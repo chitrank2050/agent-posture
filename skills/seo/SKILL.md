@@ -53,3 +53,10 @@ Before submitting an SEO change, you must pass this gate:
 - [ ] **Indexation**: Is the canonical tag correct? Is the page allowed in robots.txt?
 - [ ] **Schema**: Is the JSON-LD valid and relevant to the page content?
 - [ ] **Images**: Do all images have descriptive `alt` text?
+
+## Deep Reference Library
+
+- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `references/01-stack-eras.md` - Framework signatures and Era signatures.
+- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `references/09-calibration-diffs.md` - SEO-specific Before vs. After examples.

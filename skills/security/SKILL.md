@@ -51,3 +51,10 @@ Hard-Ban on long-lived secrets in code or environment variables if OIDC/Vault is
 - [ ] **Audit**: Does this mutation generate a record in the audit trail?
 - [ ] **Disclosure**: Does the error response hide internal system details?
 - [ ] **Keys**: Are all new secrets stored in the Vault/Secrets Manager?
+
+## Deep Reference Library
+
+- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `references/03-voice-contract.md` - Consultant persona and intent-first logic.
+- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
+- `references/09-calibration-diffs.md` - Security-focused Before vs. After examples.

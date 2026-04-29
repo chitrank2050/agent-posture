@@ -61,3 +61,10 @@ An API is a shared resource. Every endpoint must have a defined rate limit (Glob
 - [ ] **Idempotency**: Does this mutation support an Idempotency-Key?
 - [ ] **Status**: Are the HTTP status codes semantically correct?
 - [ ] **Resilience**: Is there a rate-limit applied to this endpoint?
+
+## Deep Reference Library
+
+- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `references/02-pr-anatomy.md` - API-first PR templates and communication.
+- `references/04-toolchain-registry.md` - Concept-to-Instance dictionary.
+- `references/09-calibration-diffs.md` - API-design Before vs. After examples.

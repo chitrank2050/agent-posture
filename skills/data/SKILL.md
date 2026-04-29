@@ -51,3 +51,10 @@ Multi-entity state changes MUST be wrapped in a database transaction. Reach for 
 - [ ] **Performance**: Are all foreign keys and filter columns indexed?
 - [ ] **Atomicity**: Is this multi-step change wrapped in a transaction?
 - [ ] **Parity**: Has the seed script been updated for new required fields?
+
+## Deep Reference Library
+
+- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
+- `references/07-runtime-coherence.md` - Edge, Serverless, and Persistent Server primitives.
+- `references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.
