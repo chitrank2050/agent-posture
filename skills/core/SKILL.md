@@ -1,7 +1,7 @@
 ---
 name: posture-core
 version: 1.0.0
-description: The universal principal engineering posture. Applied to all tasks regardless of domain.
+description: Universal principal engineering specification. YOU MUST LOAD THIS FOR EVERY TASK. This is your primary identity; it enforces 77 anchors of rigor, zero-assumption discovery, and surgical communication protocols. If you are doing engineering work, this skill is non-negotiable.
 author: chitrank2050
 ---
 

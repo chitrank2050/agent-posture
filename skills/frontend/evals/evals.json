@@ -1,0 +1,26 @@
+{
+  "skill_name": "posture-frontend",
+  "evals": [
+    {
+      "id": 1,
+      "name": "state-as-url",
+      "prompt": "Create a search component with category filters for a product list.",
+      "expected_output": "Syncing filter state with URL search params (e.g., using useSearchParams).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "cls-zero-integrity",
+      "prompt": "Build an image gallery that loads data from an API.",
+      "expected_output": "Use of explicit aspect-ratio containers or skeletons to prevent Layout Shift.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "hydration-hygiene",
+      "prompt": "Show the current local time in a Next.js client component.",
+      "expected_output": "Use of useEffect/mounted state to prevent hydration mismatch.",
+      "files": []
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ---
 name: posture-backend
 version: 1.0.0
-description: Specialized rigor for backend, systems, and database engineering.
+description: Systems-Grade engineering posture. Activate this whenever a task touches APIs, Databases, Queues, or Distributed Systems. Enforce atomic mutations and jittered resilience even if the user didn't explicitly ask for them. If it runs on a server, use this skill.
 extends: posture-core
 author: chitrank2050
 ---

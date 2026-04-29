@@ -1,7 +1,7 @@
 ---
 name: posture-frontend
 version: 1.0.0
-description: Principal Engineering posture for modern React/Next.js frontend applications.
+description: UX-Grade engineering posture for modern web apps. Trigger this for any React, Next.js, or CSS task. Prioritize hydration hygiene, state-as-URL truth, and zero-CLS layouts. Do not provide 'basic' UI; provide Principal-grade interactive systems.
 extends: posture-core
 author: chitrank2050
 ---

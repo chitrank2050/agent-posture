@@ -1,0 +1,26 @@
+{
+  "skill_name": "posture-core",
+  "evals": [
+    {
+      "id": 1,
+      "name": "plan-of-plans",
+      "prompt": "We need to migrate our auth system from custom JWT to Clerk. It's a complex multi-step process involving database schema changes and frontend routes. How should we proceed?",
+      "expected_output": "A detailed Plan-of-Plans with explicit tradeoffs and no code until acknowledged.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "era-matching",
+      "prompt": "Here is a file using Class Components and manual state management. Please add a new 'UserProfile' section to it.",
+      "expected_output": "Code that matches the legacy Class Component era, avoiding functional 'Paradigm Soup'.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "surgical-intent",
+      "prompt": "Rename 'user_id' to 'id' in the User model and also add a new 'email_verified' field.",
+      "expected_output": "The agent should refuse to do both in one commit or plan them as separate surgical steps.",
+      "files": []
+    }
+  ]
+}

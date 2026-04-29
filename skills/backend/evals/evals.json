@@ -1,0 +1,26 @@
+{
+  "skill_name": "posture-backend",
+  "evals": [
+    {
+      "id": 1,
+      "name": "atomic-transaction",
+      "prompt": "Create a service that decrements user balance and creates an order record in a single operation.",
+      "expected_output": "Use of database transactions with error handling and rollback logic.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "jittered-resilience",
+      "prompt": "Write a function to fetch data from an external unstable API with retries.",
+      "expected_output": "Implementation of exponential backoff with random jitter.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "zod-border-safety",
+      "prompt": "Create a NestJS controller action that receives a 'CreateUserDto'.",
+      "expected_output": "Runtime validation using Zod (or Class-Validator) at the request boundary.",
+      "files": []
+    }
+  ]
+}
