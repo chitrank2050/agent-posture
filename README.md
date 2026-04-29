@@ -1,6 +1,6 @@
 # Agent Posture 🧠🏗️
 
-[![Principal Grade](https://img.shields.io/badge/Posture-Principal_Grade-blueviolet?style=for-the-badge)](https://skills.sh)
+[![Principal Grade](https://img.shields.io/badge/Posture-Principal_Grade-blueviolet?style=for-the-badge)](https://skills.sh/r/chitrank2050/agent-posture)
 [![Validated](https://img.shields.io/badge/Registry-Validated-success?style=for-the-badge)](./tools/validate.ts)
 [![Security: SLSA 3](https://img.shields.io/badge/Security-SLSA_3-blue?style=for-the-badge)](./.github/workflows/release-finalize.yml)
 
