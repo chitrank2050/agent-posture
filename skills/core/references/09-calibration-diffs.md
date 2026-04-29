@@ -1,14 +1,12 @@
-# 09 - Calibration Diffs (Maximum Rigor)
+# 09 - Calibration Diffs (Principal Grade)
 
-Use these 12 deep transformations to calibrate your internal logic. If your code matches the "Before" (Standard LLM), refactor immediately to the "After" (Principal Grade).
+Use these deep transformations to calibrate your internal logic. If your code matches the "Before" (Standard LLM), refactor immediately to the "After" (Principal Grade).
 
-## 1. Brittle Config → Schema-Validated Border (V9, S5)
+## 1. Brittle Config → Schema-Validated Border (V9, S5, S17)
 
 ### 1.1 ❌ Before (LLM Default)
 
 ```typescript
-// db.ts
-import { Pool } from "pg";
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   max: process.env.MAX_CONNS ? parseInt(process.env.MAX_CONNS) : 10,
@@ -18,17 +16,26 @@ const pool = new Pool({
 ### 1.2 ✅ After (Principal Grade)
 
 ```typescript
-import { z } from "zod";
+import { z } from 'zod';
+
 const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
-  DB_MAX_CONNECTIONS: z.coerce.number().default(20),
+  DB_MAX_CONNECTIONS: z.coerce.number().int().positive().default(20),
+  NODE_ENV: z
+    .enum(['development', 'test', 'production'])
+    .default('development'),
 });
+
+// Validate at the edge of the system (S17)
 const result = EnvSchema.safeParse(process.env);
-if (!result.success) process.exit(1);
+if (!result.success) {
+  console.error('❌ Invalid environment variables:', result.error.format());
+  process.exit(1); // Fail-Fast (V15)
+}
 export const config = result.data;
 ```
 
-## 2. Check-then-Act → Atomic Upsert (V1, V7)
+## 2. Check-then-Act → Atomic Persistence (V1, V7)
 
 ### 2.1 ❌ Before (LLM Default)
 
@@ -41,157 +48,119 @@ return await db.user.create({ data: { email } });
 ### 2.2 ✅ After (Principal Grade)
 
 ```typescript
+// Prevents race conditions between find and create.
 return await db.user.upsert({
   where: { email },
-  update: {},
+  update: {}, // No-op update if exists
   create: { email },
 });
 ```
 
-## 3. Generic Strings → Domain-Typed Errors (S6)
+## 3. Generic Strings → Discriminated Unions (S6, S26)
 
 ### 3.1 ❌ Before (LLM Default)
 
 ```typescript
-if (amount < 0) throw new Error("Invalid amount");
+if (amount < 0) throw new Error('Invalid amount');
 ```
 
 ### 3.2 ✅ After (Principal Grade)
 
 ```typescript
-export type PaymentError = { code: "INVALID_AMOUNT"; amount: number };
-// Use Discriminated Unions for result handling.
+export type PaymentResult =
+  | { success: true; transactionId: string }
+  | { success: false; error: 'INSUFFICIENT_FUNDS'; balance: number }
+  | { success: false; error: 'INVALID_AMOUNT'; amount: number };
+
+// Caller is forced to handle all cases (S6).
 ```
 
-## 4. Brand-Coupled → Substrate-Independent (V3)
+## 4. Barrel Files → Explicit Imports (S33)
 
 ### 4.1 ❌ Before (LLM Default)
 
 ```typescript
-import { S3Client } from "@aws-sdk/client-s3";
+// components/index.ts
+export * from './Button';
+export * from './Input';
+// Usage: import { Button } from "@/components"; // Kills tree-shaking
 ```
 
 ### 4.2 ✅ After (Principal Grade)
 
 ```typescript
-interface BlobStorage {
-  upload(key: string, data: Buffer): Promise<void>;
-}
+// Usage: import { Button } from "@/components/Button";
+// Direct imports prevent accidental side-effect execution and minimize bundle size.
 ```
 
-## 5. Sequential Stalls → Concurrent Pipelining (V10)
+## 5. Async Contagion → Sync Core (S34, V18)
 
 ### 5.1 ❌ Before (LLM Default)
 
 ```typescript
-const user = await db.user.find(id);
-const posts = await db.posts.find(id);
+async function calculateTotal(items: Item[]) {
+  return items.reduce((acc, item) => acc + item.price, 0);
+}
+// Why is this async? It forces every caller to await for no reason.
 ```
 
 ### 5.2 ✅ After (Principal Grade)
 
 ```typescript
-const [user, posts] = await Promise.all([db.user.find(id), db.posts.find(id)]);
+function calculateTotal(items: Item[]) {
+  return items.reduce((acc, item) => acc + item.price, 0);
+}
+// Keep domain logic pure and sync (V18). Only handlers should be async.
 ```
 
-## 6. Logic-First → Traceability-First (S8)
+## 6. Bare Fetch → Jittered Resilience (S14, S15)
 
 ### 6.1 ❌ Before (LLM Default)
 
 ```typescript
-console.log(`Processing order ${id}`);
+const response = await fetch('https://api.external.com/data');
+return response.json();
 ```
 
 ### 6.2 ✅ After (Principal Grade)
 
 ```typescript
-logger.info("ORDER_START", { cid: context.correlationId, id });
+// Use a jittered retry strategy to prevent Thundering Herd (S14).
+const data = await retryWithJitter(
+  () => fetchWithTimeout('https://api.external.com/data', 5000),
+  { retries: 3, minDelay: 100, maxDelay: 1000 },
+);
 ```
 
-## 7. Imperative Script → Declarative Infra (V4, V15)
+## 7. Floating Point Money → Integer Cents (S32)
 
 ### 7.1 ❌ Before (LLM Default)
 
-```bash
-aws s3 mb s3://my-bucket
+```typescript
+const tax = amount * 0.05; // 0.1 + 0.2 !== 0.3
 ```
 
 ### 7.2 ✅ After (Principal Grade)
 
-```hcl
-resource "aws_s3_bucket" "vault" { bucket = "my-bucket" }
+```typescript
+const taxCents = Math.round(amountCents * 5) / 100;
+// Always store and calculate currency as integers (S32).
 ```
 
-## 8. PII Leakage → Automated Masking (S11)
+## 8. Logic-First → Traceability-First (S8, S24)
 
 ### 8.1 ❌ Before (LLM Default)
 
 ```typescript
-logger.info("login", { user }); // Leaks email/pass
+console.log(`Processing order ${id}`);
 ```
 
 ### 8.2 ✅ After (Principal Grade)
 
 ```typescript
-logger.info("LOGIN", { user: mask(user) });
-```
-
-## 9. Silent Drift → Atomic State Verification (V27)
-
-### 9.1 ❌ Before (LLM Default)
-
-```typescript
-const cached = await redis.get(key);
-return cached ?? (await db.fetch(key));
-```
-
-### 9.2 ✅ After (Principal Grade)
-
-```typescript
-const cached = await redis.get(key);
-if (cached && !isStale(cached)) return cached;
-// Verify and refresh.
-```
-
-## 10. Big Bang → Surgical Parceling (S4, S41)
-
-### 10.1 ❌ Before (LLM Default)
-
-```bash
-# One massive PR with features + fixes + renames.
-```
-
-### 10.2 ✅ After (Principal Grade)
-
-```bash
-# PR 1: Rename (Isolated)
-# PR 2: Feature (Isolated)
-```
-
-## 11. Offset Pagination → Cursor-Based Pagination (S31)
-
-### 11.1 ❌ Before (LLM Default)
-
-```typescript
-db.post.findMany({ skip: page * 20, take: 20 });
-```
-
-### 11.2 ✅ After (Principal Grade)
-
-```typescript
-db.post.findMany({ take: 20, cursor: { id: lastId } });
-```
-
-## 12. Floating Point Money → Domain Typed Cents (S32)
-
-### 12.1 ❌ Before (LLM Default)
-
-```typescript
-const price = 19.99;
-```
-
-### 12.2 ✅ After (Principal Grade)
-
-```typescript
-const priceCents = 1999;
+// Propagate context and use structured logging (S24).
+logger.info('order.process.start', {
+  orderId: id,
+  correlationId: context.correlationId(S8),
+});
 ```
