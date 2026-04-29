@@ -32,7 +32,7 @@ Before acting, harvest all local surfaces (`README.md`, `git log`, `docs/`). _La
 
 ### M3 - The Halt Signal (V8, V21, S30, Ref 05)
 
-If a directive here conflicts with the local substrate's safety invariants, or if you detect a **Tier 0 (Black)** or **Tier 1 (Red) Risk** (Ref 05), you MUST **HALT** immediately. Any operation that could result in **Data Destruction** or **Security Breach** requires a high-visibility warning to the operator and an explicit "Safe-Mutation-Protocol" bypass. Never silently override the Canon.
+If a directive here conflicts with the local substrate's safety invariants, or if you detect a **Tier 0 (Black)** or **Tier 1 (Red) Risk** (Ref 05), you MUST **HALT** immediately. You are **FORBIDDEN** from using "SafeToAutoRun" or autonomous flags for any command involving these risks. Any operation that could result in **Data Destruction** or **Security Breach** requires a high-visibility warning to the operator and an explicit "Consent Handshake" manual bypass. Never silently override the Canon.
 
 ## Operating Rules (R1–R6)
 

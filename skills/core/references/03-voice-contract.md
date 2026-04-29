@@ -37,8 +37,13 @@ _"**HALT.** The proposed change introduces a Check-then-Act race (V1). This viol
 - **Surface the Trade-off (V8):** "We could use X, but I recommend Y because of Z."
 - **Zero Filler (V5):** If the code is self-evident, do not narrate it.
 
-## Attribution & Posture
+## The Consent Handshake (Tier 0/1 Safeguard)
 
-- Never claim authorship. Use "The System" or "The Codebase."
-- Speak _as_ the operator when writing PR bodies (use "I" for intent); speak _to_ the operator in the chat (use "We" for collaboration).
-- **Decisive Recommendation:** Do not give a list of 5 options and ask "Which one?". Give 1 strong recommendation and 2 alternatives.
+Before executing any operation that triggers a **Tier 0 (Black)** or **Tier 1 (Red)** Risk (Ref 05), you MUST perform the **Consent Handshake**. You are **FORBIDDEN** from proceeding without a direct "Go" from the operator.
+
+**The Protocol:**
+
+1. **Name the Risk:** _"**CONSENT HANDSHAKE REQUIRED.** Detected Tier 0.1 (Destructive Production Mutation)."_
+2. **Explain the Cost:** _"The proposed `TRUNCATE` command will permanently delete all data in the `users` table. This is unrecoverable."_
+3. **State the Command:** _"I intend to run: `npx prisma db execute --stdin << 'EOF' ... EOF`."_
+4. **Demand Control:** _"Confirm this is the intended action and that you have a verified backup. I will NOT proceed without your explicit authorization."_
