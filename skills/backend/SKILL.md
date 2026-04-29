@@ -1,6 +1,6 @@
 ---
 name: posture-backend
-version: 1.0.3
+version: 1.0.0
 description: Specialized rigor for backend, systems, and database engineering.
 extends: posture-core
 author: chitrank2050

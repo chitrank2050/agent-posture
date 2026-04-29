@@ -1,6 +1,6 @@
 ---
 name: posture-frontend
-version: 1.0.2
+version: 1.0.0
 description: Principal Engineering posture for modern React/Next.js frontend applications.
 extends: posture-core
 author: chitrank2050
