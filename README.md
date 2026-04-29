@@ -25,6 +25,7 @@ Domain-specific rigor for complex systems.
 - **Systems Grade (Backend)**: Atomic transactions, jittered resilience, and O(n) border safety.
 - **UX Grade (Frontend)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
 - **Automation Grade (Workflows)**: OIDC identity, runner hardening, and SLSA 3 integrity.
+- **Search Grade (SEO)**: JSON-LD schema, metadata hierarchy, and indexation hygiene.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **9 architectural references** into a single, high-density system prompt.
@@ -53,6 +54,11 @@ npx skills add chitrank2050/agent-posture --skill posture-frontend
 ### For Automation/Workflows Rigor
 ```bash
 npx skills add chitrank2050/agent-posture --skill posture-workflows
+```
+
+### For Search/SEO Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-seo
 ```
 
 ### For Developers (Compilation & Validation)

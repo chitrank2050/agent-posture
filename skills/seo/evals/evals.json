@@ -1,0 +1,26 @@
+{
+  "skill_name": "posture-seo",
+  "evals": [
+    {
+      "id": 1,
+      "name": "metadata-optimization",
+      "prompt": "Create a landing page for our 'Agent Posture' framework. Include the necessary meta tags for SEO.",
+      "expected_output": "Unique title, meta description within limits, and a single H1.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "structured-data-json-ld",
+      "prompt": "Add FAQ schema to this page about 'How to build secure workflows'.",
+      "expected_output": "Valid JSON-LD script tag with FAQPage schema.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "technical-indexation",
+      "prompt": "We have some duplicate content issues on our blog. How do we fix this technically?",
+      "expected_output": "Recommendation and implementation of self-referencing canonical tags and robots.txt rules.",
+      "files": []
+    }
+  ]
+}
