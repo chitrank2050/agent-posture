@@ -1,0 +1,12 @@
+{
+  "name": "frontend-addon",
+  "description": "Principal Engineering posture for modern React/Next.js frontend applications.",
+  "version": "1.0.0",
+  "triggers": ["React", "Next.js", "TailwindCSS", "CSS", "HTML", "UI/UX"],
+  "authors": [
+    {
+      "name": "Chitrank Agnihotri",
+      "url": "https://github.com/chitrank2050"
+    }
+  ]
+}

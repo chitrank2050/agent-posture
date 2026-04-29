@@ -18,7 +18,7 @@ body = """
 {% for group, commits in commits | group_by(attribute="group") %}
 ### {{ group | striptags | trim | upper_first }}
 {% for commit in commits %}
-- {% if commit.scope %}**{{ commit.scope }}:** {% endif %}{{ commit.message | trim | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/chitrank/agent-posture/commit/{{ commit.id }})) by {% set user = commit.remote.username | default(value=commit.author.name) %}{% if user is ending_with("[bot]") %}[{{ user }}](https://github.com/apps/{{ user | split(pat="[") | first }}){% else %}[@{{ user }}](https://github.com/{{ user }}){% endif %}\
+- {% if commit.scope %}**{{ commit.scope }}:** {% endif %}{{ commit.message | trim | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/chitrank2050/agent-posture/commit/{{ commit.id }})) by {% set user = commit.remote.username | default(value=commit.author.name) %}{% if user is ending_with("[bot]") %}[{{ user }}](https://github.com/apps/{{ user | split(pat="[") | first }}){% else %}[@{{ user }}](https://github.com/{{ user }}){% endif %}\
 {% endfor %}
 {% endfor %}\n
 """
@@ -39,7 +39,7 @@ skip_merge = true
 # regex for preprocessing the commit messages
 commit_preprocessors = [
   # Replace issue numbers with links
-  { pattern = '(?i)\((?:fixes?|closes?|resolves?|#)\s?#([0-9]+)\)', replace = "([#${1}](https://github.com/chitrank/agent-posture/issues/${1}))" },
+  { pattern = '(?i)\((?:fixes?|closes?|resolves?|#)\s?#([0-9]+)\)', replace = "([#${1}](https://github.com/chitrank2050/agent-posture/issues/${1}))" },
   # Clean up trailing squash-merge noise (e.g. "feat: something (#123)")
   { pattern = '\s\(#([0-9]+)\)$', replace = "" },
 ]
@@ -81,5 +81,5 @@ topo_order = false
 sort_commits = "oldest"
 
 [remote.github]
-owner = "chitrank"
+owner = "chitrank2050"
 repo = "agent-posture"

@@ -32,7 +32,7 @@ Specialized technical specifications for complex systems.
 ### For Developers
 Clone and validate the repository locally:
 ```bash
-git clone https://github.com/chitrank/agent-posture.git
+git clone https://github.com/chitrank2050/agent-posture.git
 pnpm install
 pnpm run validate
 ```
@@ -40,7 +40,7 @@ pnpm run validate
 ### For AI Agents
 Add this posture to your global agentic environment:
 ```bash
-npx skills add chitrank/agent-posture
+npx skills add chitrank2050/agent-posture
 ```
 
 ---

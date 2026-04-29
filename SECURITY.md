@@ -16,7 +16,7 @@ If you discover a security vulnerability within the Agent Posture framework or a
 
 ### How to Report
 
-Please send an email to **chitrank2050@gmail.com** (or open a [GitHub Private Vulnerability Report](https://github.com/chitrank/agent-posture/security/advisories/new)) with the following information:
+Please send an email to **chitrank2050@gmail.com** (or open a [GitHub Private Vulnerability Report](https://github.com/chitrank2050/agent-posture/security/advisories/new)) with the following information:
 
 1. **Description**: A detailed description of the vulnerability.
 2. **Steps to Reproduce**: A clear guide to reproducing the issue.

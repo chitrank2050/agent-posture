@@ -2,7 +2,7 @@
   "name": "agent-posture",
   "version": "1.0.0",
   "description": "A high-rigor, spec-driven framework for Agentic Engineering instructions. Move beyond 'skills' to a full Principal Engineering specification.",
-  "homepage": "https://github.com/chitrank/agent-posture#readme",
+  "homepage": "https://github.com/chitrank2050/agent-posture#readme",
   "author": {
     "name": "Chitrank Agnihotri",
     "email": "chitrank2050@gmail.com",
@@ -11,10 +11,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chitrank/agent-posture.git"
+    "url": "git+https://github.com/chitrank2050/agent-posture.git"
   },
   "bugs": {
-    "url": "https://github.com/chitrank/agent-posture/issues"
+    "url": "https://github.com/chitrank2050/agent-posture/issues"
   },
   "main": "index.js",
   "scripts": {
