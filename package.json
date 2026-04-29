@@ -1,6 +1,7 @@
 {
   "name": "agent-posture",
   "version": "1.0.0",
+  "type": "module",
   "description": "A high-rigor, spec-driven framework for Agentic Engineering instructions. Move beyond 'skills' to a full Principal Engineering specification.",
   "homepage": "https://github.com/chitrank2050/agent-posture#readme",
   "author": {
@@ -18,10 +19,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "validate": "ts-node tools/validate.ts",
+    "validate": "node --experimental-strip-types tools/validate.ts",
     "lint": "markdownlint '**/*.md' --fix",
     "format": "prettier --write .",
-    "compile": "ts-node tools/compile.ts",
+    "compile": "node --experimental-strip-types tools/compile.ts",
     "build": "pnpm run compile",
     "prepare": "lefthook install",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -53,7 +54,6 @@
     "lefthook": "^2.1.6",
     "markdownlint-cli": "^0.48.0",
     "prettier": "^3.2.5",
-    "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.1"
   },
