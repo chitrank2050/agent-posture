@@ -22,6 +22,7 @@
     "lint": "markdownlint '**/*.md' --fix",
     "format": "prettier --write .",
     "compile": "ts-node tools/compile.ts",
+    "build": "pnpm run compile",
     "prepare": "lefthook install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deps:update": "pnpm update --interactive --latest",
