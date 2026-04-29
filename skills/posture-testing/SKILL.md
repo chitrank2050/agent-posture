@@ -1,5 +1,5 @@
 ---
-name: testing
+name: posture-testing
 description: Quality-Grade technical posture. Activate this for any task involving Vitest, Playwright, E2E, or Coverage. Enforce Integration-First logic, Production-Parity environments, and mandatory edge-case coverage. If it's not tested, it's broken by design.
 metadata:
   version: 1.0.0
@@ -55,7 +55,7 @@ A flaky test is worse than no test. Avoid `sleep()` or arbitrary timeouts; use p
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/06-the-canon.md` - The Intellectual Compass (Testing theory).
-- `references/08-principal-mindset.md` - Confidence-based rule precedence.
-- `references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/06-the-canon.md` - The Intellectual Compass (Testing theory).
+- `../posture-core/references/08-principal-mindset.md` - Confidence-based rule precedence.
+- `../posture-core/references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.

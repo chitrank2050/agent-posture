@@ -1,5 +1,5 @@
 ---
-name: skill-creator
+name: posture-skill-creator
 description: Meta-Grade engineering posture for creating high-rigor agentic skills. Activate this for any task involving the creation, refactoring, or auditing of .md or .json files within the /skills directory. Enforce procedural logic, metadata density, and constitutional alignment.
 metadata:
   version: 1.0.0
@@ -34,7 +34,7 @@ Omit Vague Declarations. Do not just tell the agent _what_ the goal is; define _
 
 ### S3 - Progressive Disclosure (V25, S33)
 
-Zero-Bloat Core. Keep the primary `SKILL.md` focused and under 500 lines. Move implementation details, long examples, or deep documentation to the `references/` directory. Link to them using relative paths to minimize cognitive load (V25).
+Zero-Bloat Core. Keep the primary `SKILL.md` focused and under 500 lines. Move implementation details, long examples, or deep documentation to the `../posture-core/references/` directory. Link to them using relative paths to minimize cognitive load (V25).
 
 ### S4 - Adversarial Evals (V9, V21, S30)
 
@@ -52,14 +52,14 @@ The "Principal" Edge. Every operating rule MUST be anchored to the **Dossier V/S
 
 - [ ] **Frontmatter**: Is the YAML valid and the description high-density?
 - [ ] **Logic**: Are instructions procedural rather than declarative?
-- [ ] **Reference**: Are implementation details moved to `references/`?
+- [ ] **Reference**: Are implementation details moved to `../posture-core/references/`?
 - [ ] **Evals**: Does the suite include both positive and negative triggers?
 - [ ] **Alignment**: Is every rule linked to a Dossier V/S code?
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/03-voice-contract.md` - Guidelines for the "Principal" tone and language.
-- `references/08-principal-mindset.md` - Philosophical foundations of high-rigor engineering.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/03-voice-contract.md` - Guidelines for the "Principal" tone and language.
+- `../posture-core/references/08-principal-mindset.md` - Philosophical foundations of high-rigor engineering.
 - [Specification - Agent Skills](https://agentskills.io/specification) - Formal structure requirements.
 - [Best Practices - Agent Skills](https://agentskills.io/best-practices) - Content optimization guide.

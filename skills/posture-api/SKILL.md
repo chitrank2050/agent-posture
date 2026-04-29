@@ -1,5 +1,5 @@
 ---
-name: api
+name: posture-api
 description: API-Grade technical posture. Activate this for any task involving REST, GraphQL, OpenAPI, or Bruno collections. Enforce Contract-First design, response normalization, and idempotency keys. If it's a boundary, it must be stable and versioned.
 metadata:
   version: 1.0.0
@@ -65,7 +65,7 @@ An API is a shared resource. Every endpoint must have a defined rate limit (Glob
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/02-pr-anatomy.md` - API-first PR templates and communication.
-- `references/04-toolchain-registry.md` - Concept-to-Instance dictionary.
-- `references/09-calibration-diffs.md` - API-design Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/02-pr-anatomy.md` - API-first PR templates and communication.
+- `../posture-core/references/04-toolchain-registry.md` - Concept-to-Instance dictionary.
+- `../posture-core/references/09-calibration-diffs.md` - API-design Before vs. After examples.

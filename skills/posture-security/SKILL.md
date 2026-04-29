@@ -1,5 +1,5 @@
 ---
-name: security
+name: posture-security
 description: Security-Grade technical posture. Activate this for any task involving Auth, Entitlements, PII, or Sensitive Logic. Enforce Zero-Trust internals, PII sanitization, and immutable audit trails. If it's sensitive, assume it's already targeted.
 metadata:
   version: 1.0.0
@@ -55,7 +55,7 @@ Hard-Ban on long-lived secrets in code or environment variables if OIDC/Vault is
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/03-voice-contract.md` - Consultant persona and intent-first logic.
-- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
-- `references/09-calibration-diffs.md` - Security-focused Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/03-voice-contract.md` - Consultant persona and intent-first logic.
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
+- `../posture-core/references/09-calibration-diffs.md` - Security-focused Before vs. After examples.

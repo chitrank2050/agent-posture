@@ -1,5 +1,5 @@
 ---
-name: backend
+name: posture-backend
 description: Systems-Grade engineering posture. Activate this whenever a task touches APIs, Databases, Queues, or Distributed Systems. Enforce atomic mutations and jittered resilience even if the user didn't explicitly ask for them. If it runs on a server, use this skill.
 metadata:
   version: 1.0.0

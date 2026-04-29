@@ -38,7 +38,15 @@ function validateDirectory(dir: string) {
         process.exit(1);
       }
 
-      console.log(`${GREEN}✅ ${data.name}@${data.version} is valid.${RESET}`);
+      const validatedData = result.data;
+      const metadata = validatedData.metadata as
+        | Record<string, unknown>
+        | undefined;
+      const version =
+        typeof metadata?.version === 'string' ? metadata.version : 'unknown';
+      console.log(
+        `${GREEN}✅ ${validatedData.name}@${version} is valid.${RESET}`,
+      );
     }
   }
 }

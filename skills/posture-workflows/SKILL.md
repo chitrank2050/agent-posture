@@ -1,5 +1,5 @@
 ---
-name: workflows
+name: posture-workflows
 description: Automation-Grade engineering posture. Activate this for any task involving .yml workflows, GitHub Actions, or deployment scripts. Enforce SHA-pinning, OIDC identity, and SLSA 3 integrity. If it automates a process, this skill must be in control.
 metadata:
   version: 1.0.0

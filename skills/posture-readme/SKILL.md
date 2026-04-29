@@ -1,5 +1,5 @@
 ---
-name: readme
+name: posture-readme
 description: Communication-Grade documentation posture. Activate this for generating or auditing README.md files. Enforce professional Azure/Microsoft structure, GFM admonitions, and zero-filler surgical intent. If it's not documented with rigor, it's not Principal Grade.
 metadata:
   version: 1.0.0
@@ -55,6 +55,6 @@ Every Principal project deserves an authoritative base. End every README with a 
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/03-voice-contract.md` - The Principal Voice & Handshake.
-- `references/08-principal-mindset.md` - The "Decisive" consultant persona.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/03-voice-contract.md` - The Principal Voice & Handshake.
+- `../posture-core/references/08-principal-mindset.md` - The "Decisive" consultant persona.

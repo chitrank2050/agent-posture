@@ -1,5 +1,5 @@
 ---
-name: changelog
+name: posture-changelog
 description: History-Grade engineering posture. Activate this for any task involving CHANGELOG.md generation, git-cliff configuration, or release notes. Enforce conventional commit mapping, semantic sectioning, and constitutional attribution.
 metadata:
   version: 1.0.0
@@ -55,6 +55,6 @@ The changelog is part of the artifact. No release is complete without an updated
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/02-pr-anatomy.md` - Aligning changelogs with PR descriptions.
-- `references/09-calibration-diffs.md` - Examples of "Good" vs "Bad" commit history.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/02-pr-anatomy.md` - Aligning changelogs with PR descriptions.
+- `../posture-core/references/09-calibration-diffs.md` - Examples of "Good" vs "Bad" commit history.

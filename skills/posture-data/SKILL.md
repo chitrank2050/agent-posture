@@ -1,5 +1,5 @@
 ---
-name: data
+name: posture-data
 description: Data-Grade technical posture. Activate this for any task involving Databases, Prisma, Migrations, or Data Modeling. Enforce schema integrity, multi-tenant isolation, and deterministic seeding. If it's in the DB, it must be immutable and isolated.
 metadata:
   version: 1.0.0
@@ -59,7 +59,7 @@ Multi-entity state changes MUST be wrapped in a database transaction. Reach for 
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
-- `references/07-runtime-coherence.md` - Edge, Serverless, and Persistent Server primitives.
-- `references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
+- `../posture-core/references/07-runtime-coherence.md` - Edge, Serverless, and Persistent Server primitives.
+- `../posture-core/references/09-calibration-diffs.md` - 12 high-density Before vs. After examples.

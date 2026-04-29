@@ -1,5 +1,5 @@
 ---
-name: seo
+name: posture-seo
 description: SEO-Grade technical posture. Trigger this for any task involving metadata, indexation, structured data, or search engine visibility. Enforce JSON-LD, Sitemap hygiene, and H1-H6 hierarchy. If it's on the public web, it must be optimized.
 metadata:
   version: 1.0.0
@@ -57,7 +57,7 @@ Before submitting an SEO change, you must pass this gate:
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/01-stack-eras.md` - Framework signatures and Era signatures.
-- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
-- `references/09-calibration-diffs.md` - SEO-specific Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/01-stack-eras.md` - Framework signatures and Era signatures.
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `../posture-core/references/09-calibration-diffs.md` - SEO-specific Before vs. After examples.

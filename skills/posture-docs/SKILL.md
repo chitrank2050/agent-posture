@@ -1,5 +1,5 @@
 ---
-name: docs
+name: posture-docs
 description: Communication-Grade engineering posture. Activate this for any task involving Markdown, MkDocs, ADRs, or technical writing. Enforce rationale-first logic, structural hierarchy, and intent-driven diagrams. If it's not documented, it's a secret.
 metadata:
   version: 1.0.0
@@ -55,7 +55,7 @@ Documentation is part of the "Definition of Done." No code change that alters th
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/02-pr-anatomy.md` - Technical communication in PRs.
-- `references/03-voice-contract.md` - The Principal Voice (Consultant Persona).
-- `references/06-the-canon.md` - The Intellectual Compass for technical writing.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/02-pr-anatomy.md` - Technical communication in PRs.
+- `../posture-core/references/03-voice-contract.md` - The Principal Voice (Consultant Persona).
+- `../posture-core/references/06-the-canon.md` - The Intellectual Compass for technical writing.

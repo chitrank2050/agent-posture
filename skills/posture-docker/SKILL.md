@@ -1,5 +1,5 @@
 ---
-name: docker
+name: posture-docker
 description: Container-Grade engineering posture for high-rigor environments. Activate for Dockerfile optimization, secure orchestration, and image size audits. Enforce multi-stage mandates, non-root sovereignty, and deterministic layer caching.
 metadata:
   version: 1.0.0
@@ -72,9 +72,9 @@ Before finalizing any Docker configuration, execute the following audit:
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/04-toolchain-registry.md` - Standards for reproducible infrastructure.
-- `references/07-runtime-coherence.md` - Hardening guides for container runtimes.
-- `references/09-calibration-diffs.md` - Examples of "Good" vs "Bad" Docker configurations.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/04-toolchain-registry.md` - Standards for reproducible infrastructure.
+- `../posture-core/references/07-runtime-coherence.md` - Hardening guides for container runtimes.
+- `../posture-core/references/09-calibration-diffs.md` - Examples of "Good" vs "Bad" Docker configurations.
 - `multi-stage-dockerfile` (github/awesome-copilot) - Optimization patterns.
 - `docker-expert` (sickn33/antigravity-awesome-skills) - Advanced diagnostics.

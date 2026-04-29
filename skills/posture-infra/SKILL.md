@@ -1,5 +1,5 @@
 ---
-name: infra
+name: posture-infra
 description: Infrastructure-Grade engineering posture. Activate this for any task involving Docker, Kubernetes, CI/CD runners, or Environment variables. Enforce health-aware orchestration, resource constraints, and rationale-heavy configuration. If it runs in a container, it must be constrained and healthy.
 metadata:
   version: 1.0.0
@@ -55,7 +55,7 @@ Developer parity is non-negotiable. Ensure all images are multi-arch or Alpine-b
 
 ## Deep Reference Library
 
-- `references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
-- `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
-- `references/07-runtime-coherence.md` - Edge vs. Persistent Server primitives.
-- `references/09-calibration-diffs.md` - Infra-design Before vs. After examples.
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `../posture-core/references/07-runtime-coherence.md` - Edge vs. Persistent Server primitives.
+- `../posture-core/references/09-calibration-diffs.md` - Infra-design Before vs. After examples.
