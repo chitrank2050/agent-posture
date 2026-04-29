@@ -17,15 +17,6 @@
     "url": "https://github.com/chitrank/agent-posture/issues"
   },
   "main": "index.js",
-  "keywords": [
-    "ai-agents",
-    "engineering-rigor",
-    "principal-engineering",
-    "skills-sh",
-    "system-prompt",
-    "llm-instructions",
-    "agentic-workflow"
-  ],
   "scripts": {
     "validate": "ts-node tools/validate.ts",
     "lint": "markdownlint '**/*.md' --fix",
@@ -37,6 +28,15 @@
     "lint:ts": "eslint .",
     "lint:check": "prettier --check ."
   },
+  "keywords": [
+    "ai-agents",
+    "engineering-rigor",
+    "principal-engineering",
+    "skills-sh",
+    "system-prompt",
+    "llm-instructions",
+    "agentic-workflow"
+  ],
   "dependencies": {
     "gray-matter": "^4.0.3",
     "zod": "^4.3.6"
@@ -60,5 +60,28 @@
   "engines": {
     "node": ">=24.0.0",
     "pnpm": ">=9.0.0"
+  },
+  "git-hygiene": {
+    "types": [
+      "feat",
+      "fix",
+      "skill",
+      "core",
+      "addon",
+      "tool",
+      "chore",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "build",
+      "ci",
+      "revert",
+      "maintenance"
+    ],
+    "ignoreBranches": [
+      "main"
+    ]
   }
 }
