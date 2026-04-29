@@ -32,7 +32,8 @@
     "format": "prettier --write .",
     "compile": "ts-node tools/compile.ts",
     "prepare": "lefthook install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deps:update": "pnpm update --interactive --latest"
   },
   "dependencies": {
     "zod": "^3.23.8",
