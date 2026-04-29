@@ -2,7 +2,7 @@
 name: core-posture
 version: 1.0.1
 description: The universal principal engineering posture. Applied to all tasks regardless of domain.
-author: chitrank
+author: chitrank2050
 ---
 
 # Principal Engineering Posture (Core)

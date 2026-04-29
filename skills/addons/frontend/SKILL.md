@@ -1,3 +1,11 @@
+---
+name: frontend-addon
+version: 1.0.0
+description: Principal Engineering posture for modern React/Next.js frontend applications.
+extends: core-posture
+author: chitrank2050
+---
+
 # Frontend Addon 🎨⚡
 
 > **"A UI is a state machine. Treat it with the same rigor as a database."**

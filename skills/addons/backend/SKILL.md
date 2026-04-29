@@ -3,7 +3,7 @@ name: backend-addon
 version: 1.0.1
 description: Specialized rigor for backend, systems, and database engineering.
 extends: core-posture
-author: chitrank
+author: chitrank2050
 ---
 
 # Backend Engineering Addon
