@@ -1,0 +1,50 @@
+{
+  "name": "agent-posture",
+  "version": "1.0.0",
+  "description": "A high-rigor, spec-driven framework for Agentic Engineering instructions. Move beyond 'skills' to a full Principal Engineering specification.",
+  "homepage": "https://github.com/chitrank/agent-posture#readme",
+  "author": {
+    "name": "Chitrank Agnihotri",
+    "email": "chitrank2050@gmail.com",
+    "url": "https://www.chitrankagnihotri.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chitrank/agent-posture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chitrank/agent-posture/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "validate": "ts-node tools/validate.ts",
+    "lint:md": "markdownlint '**/*.md' --fix",
+    "format": "prettier --write .",
+    "compile": "ts-node tools/compile.ts",
+    "prepare": "lefthook install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai-agents",
+    "engineering-rigor",
+    "principal-engineering",
+    "skills-sh",
+    "system-prompt",
+    "llm-instructions",
+    "agentic-workflow"
+  ],
+  "dependencies": {
+    "zod": "^3.23.8",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.12.7",
+    "markdownlint-cli": "^0.40.0",
+    "prettier": "^3.2.5",
+    "lefthook": "^1.6.10",
+    "@chitrank2050/git-hygiene": "^0.4.11"
+  }
+}

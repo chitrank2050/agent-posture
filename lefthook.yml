@@ -1,0 +1,44 @@
+# Lefthook - Git hooks manager
+# Replaces Husky + lint-staged.
+# Docs: https://lefthook.dev/configuration/
+
+# ─── pre-commit ──────────────────────────────────────────────
+pre-commit:
+  parallel: false
+  commands:
+    # 1. Skill Validation - Ensures metadata matches Zod schema
+    validate-skills:
+      run: npm run validate
+
+    # 2. TypeScript files - Prettier format
+    lint-ts:
+      glob: 'tools/**/*.ts'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+
+    # 3. Markdown files - markdownlint fix + Prettier format
+    lint-md:
+      glob: '**/*.md'
+      run: npx markdownlint --fix {staged_files} && npx prettier --write {staged_files}
+      stage_fixed: true
+
+    # 4. JSON / YAML - Prettier format
+    lint-json-yml:
+      glob: '**/*.{json,yml,yaml}'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+
+# ─── commit-msg ──────────────────────────────────────────────
+# Enforces Conventional Commits format via git-hygiene.
+commit-msg:
+  commands:
+    git-hygiene:
+      run: npx git-hygiene commit {1}
+
+# ─── pre-push ────────────────────────────────────────────────
+pre-push:
+  parallel: true
+  commands:
+    # Ensure branch naming follows standards
+    branch-name:
+      run: npx git-hygiene branch
