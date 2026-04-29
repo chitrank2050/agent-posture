@@ -1,29 +1,82 @@
-name: Validate Skills
+# =============================================================
+# Skills Validation Pipeline ⚡️
+#
+# Primary pipeline for agent skill validation.
+# Triggers on:
+#   - Push to main (excluding docs/meta)
+#   - Pull Requests to main
+#
+# Optimized to run only when relevant files change
+# to save GitHub Actions minutes (Free Tier friendly).
+# =============================================================
+
+name: Validate Skills ⚡️
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+    paths-ignore:
+      # Github workflow configs
+      - ".github/workflows/**"
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/PULL_REQUEST_TEMPLATE.md"
+      - ".github/FUNDING.yml"
+      - ".github/CODEOWNERS"
+      # Editor & IDE configs
+      - ".vscode/**"
+      - ".editorconfig"
+      # Changelog & release tooling config
+      - "cliff.toml"
+      # Git hooks config (local-only)
+      - "lefthook.yml"
+      - "markdownlint.json"
+      - "package.json"
+      - "package-lock.json"
+      - "pnpm-lock.yaml"
+      - "yarn.lock"
+
+concurrency:
+  # Ensure only one CI run per branch/PR at a time
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: 24
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   validate:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Harden Runner 🛡️
+        uses: step-security/harden-runner@8d3c67de8e2fe68ef647c8db1e6a09f647780f40 # v2.19.0
         with:
-          node-version: "20"
-          cache: "npm"
+          egress-policy: audit
 
-      - name: Install dependencies
-        run: npm install
+      - name: Checkout 📥
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm 📦
+        uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
+
+      - name: Setup Node.js 🟢
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+
+      - name: Install dependencies 🛠️
+        timeout-minutes: 5
+        run: pnpm install --frozen-lockfile --prefer-offline --ignore-scripts
 
       - name: Run validation
-        run: npm run validate
+        run: pnpm run validate
 
       - name: Run markdown lint
-        run: npm run lint:md
+        run: pnpm run lint
