@@ -1,8 +1,8 @@
 ---
-name: frontend-addon
-version: 1.0.1
+name: posture-frontend
+version: 1.0.2
 description: Principal Engineering posture for modern React/Next.js frontend applications.
-extends: core-posture
+extends: posture-core
 author: chitrank2050
 ---
 

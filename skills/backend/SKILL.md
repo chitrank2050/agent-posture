@@ -1,8 +1,8 @@
 ---
-name: backend-addon
-version: 1.0.2
+name: posture-backend
+version: 1.0.3
 description: Specialized rigor for backend, systems, and database engineering.
-extends: core-posture
+extends: posture-core
 author: chitrank2050
 ---
 
