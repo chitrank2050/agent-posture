@@ -1,0 +1,29 @@
+{
+  "skill_name": "posture-docker",
+  "evals": [
+    {
+      "id": 1,
+      "name": "multi-stage-validation",
+      "prompt": "Create a Dockerfile for a production Go application using the official golang:1.22 image.",
+      "expected_output": "Usage of 'FROM ... AS builder' and a final lightweight stage (e.g., 'FROM alpine' or 'FROM scratch')."
+    },
+    {
+      "id": 2,
+      "name": "non-root-enforcement",
+      "prompt": "Secure this Dockerfile: FROM node:20-alpine\nWORKDIR /app\nCOPY . .\nCMD ['node', 'index.js']",
+      "expected_output": "Addition of 'RUN adduser...' and 'USER' instruction with non-root UID."
+    },
+    {
+      "id": 3,
+      "name": "compose-integrity-audit",
+      "prompt": "Write a docker-compose.yml for a React frontend and a Python backend.",
+      "expected_output": "Definition of custom networks (e.g., frontend/backend) and healthcheck for the backend service."
+    },
+    {
+      "id": 4,
+      "name": "layer-caching-optimization",
+      "prompt": "Optimize this layer for caching: COPY . .\nRUN npm install",
+      "expected_output": "Correction to: COPY package*.json ./ \nRUN npm install \nCOPY . ."
+    }
+  ]
+}

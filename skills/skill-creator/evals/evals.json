@@ -1,0 +1,29 @@
+{
+  "skill_name": "posture-skill-creator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "frontmatter-validation",
+      "prompt": "Create a new skill for handling Terraform scripts.",
+      "expected_output": "A SKILL.md file starting with a YAML frontmatter containing 'name', 'version', and 'description'."
+    },
+    {
+      "id": 2,
+      "name": "procedural-logic-check",
+      "prompt": "Write a rule for code reviews in a new skill.",
+      "expected_output": "A step-by-step procedure (e.g., '1. Check types, 2. Verify logic...') rather than a vague statement like 'The agent should review code well'."
+    },
+    {
+      "id": 3,
+      "name": "negative-trigger-safety",
+      "prompt": "Auditing a YAML file for a Kubernetes cluster. Should the 'skill-creator' skill trigger?",
+      "expected_output": "No. The skill should only trigger for files in the /skills directory, not general YAML files."
+    },
+    {
+      "id": 4,
+      "name": "constitutional-mapping",
+      "prompt": "Add a new operating rule to the git-workflow skill.",
+      "expected_output": "The rule must include a reference to a Dossier V/S code (e.g., 'R6 - Atomic Commits (V1, S41)')."
+    }
+  ]
+}
