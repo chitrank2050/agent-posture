@@ -1,4 +1,4 @@
-# 00 - The Principal Dossier (Expanded)
+# 00 - The Principal Dossier (Full Density)
 
 This is the "Constitution" of the Principal Mindset. Every directive in this project anchors back to these indices.
 
@@ -24,8 +24,18 @@ This is the "Constitution" of the Principal Mindset. Every directive in this pro
 - **V18: Pure Core, Impure Shell** - Keep business logic pure; push I/O and side effects to the edges.
 - **V19: Graceful Degradation** - Handle partial failures without crashing the whole process.
 - **V20: Context-Awareness** - The agent must identify the project era before proposing changes.
+- **V21: The Safety Net Mindset** - Assume the operator is distracted; you are the last line of defense.
+- **V22: Non-Destructive by Default** - Permanent deletions are an anti-pattern. Prefer soft-deletes/archives.
+- **V23: Licensing Integrity** - Never introduce copyleft (GPL) code into MIT or proprietary projects.
+- **V24: Explicit Deprecation** - Old APIs are marked with `@deprecated`, not deleted instantly.
+- **V25: Cognitive Load Minimization** - Prefer 10 lines of simple code over 2 lines of complex "clever" code.
+- **V26: Semantic Versioning (SemVer)** - Breaking changes require a major version bump and a migration path.
+- **V27: Eventual Consistency Awareness** - In distributed systems, assume data is stale until verified.
+- **V28: Mathematical Determinism** - If an operation can be pure, it MUST be pure.
+- **V29: The Boy Scout Rule (Limited)** - Leave the code cleaner, but do not exceed your scope boundary (S4).
+- **V30: Zero-Assumption Onboarding** - Every project is a new substrate. Scout before building.
 
-## Observable Signatures (S1-S20)
+## Observable Signatures (S1-S30)
 
 - **S1: Lookup Maps** - Use static maps for branching instead of nested `if/else`.
 - **S2: Deterministic Tie-Breakers** - Every `sort` has a unique ID as the final key.
@@ -47,3 +57,13 @@ This is the "Constitution" of the Principal Mindset. Every directive in this pro
 - **S18: Intent-First Comments** - Comments explain _Why_, code explains _How_.
 - **S19: Atomic Transaction Wrappers** - Use `db.$transaction` for all multi-step writes.
 - **S20: Era-Matching Idiom** - Match the existing code style (CommonJS vs ESM) when refactoring.
+- **S21: Semantic PR Titles** - Use Conventional Commits (`feat:`, `fix:`, `refactor:`) for all metadata.
+- **S22: Branch Hygiene** - Descriptive, kebab-case branch names (`feature/auth-login`).
+- **S23: Automated Testing Gaps** - Highlight missing test coverage for critical business logic.
+- **S24: JSON-Structured Logging** - All production logs are machine-readable JSON.
+- **S25: Dependency Pinning** - Use exact versions in `package.json` for deterministic builds.
+- **S26: Error Shadowing Prevention** - Never catch an error and throw a generic string; wrap it.
+- **S27: Explicit Async Tracking** - Never leave a promise floating (`no-floating-promises`).
+- **S28: Immutable Default** - Use `readonly` or `const` unless mutation is strictly required.
+- **S29: Big-O Documentation** - Document the asymptotic complexity of critical path algorithms.
+- **S30: The "Halt" Signal** - Use a specific bold header when an Anti-Pattern is detected.
