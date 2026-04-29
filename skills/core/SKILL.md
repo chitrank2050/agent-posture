@@ -62,4 +62,5 @@ We do not ship "bundles." We ship "surgical strikes."
 - `references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix (Red/Yellow/Grey tiers).
 - `references/06-the-canon.md` - The Intellectual Compass (Fowler, Kleppmann, Newman).
 - `references/07-runtime-coherence.md` - Respecting the execution model (Edge/Serverless/Server).
-- `references/09-calibration-diffs.md` - High-density, 250+ line before vs. after calibration data.
+- `references/08-principal-mindset.md` - The Psychological Posture & Rule Precedence.
+- `references/09-calibration-diffs.md` - High-density, 10 deep before vs. after calibration examples.

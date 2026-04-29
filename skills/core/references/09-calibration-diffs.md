@@ -1,6 +1,6 @@
 # 09 - Calibration Diffs (High Rigor)
 
-Use these 6 deep transformations to calibrate your internal logic. If your code matches the "Before" (Standard LLM), refactor immediately to the "After" (Principal Grade).
+Use these 10 deep transformations to calibrate your internal logic. If your code matches the "Before" (Standard LLM), refactor immediately to the "After" (Principal Grade).
 
 ## 1. Brittle Config → Schema-Validated Border (V9, S5)
 
@@ -211,4 +211,125 @@ async function handleOrder(order: Order, context: { correlationId: string }) {
     throw err;
   }
 }
+```
+
+---
+
+## 7. Infra-as-Code (IaC) Drift → Immutable Declaration (V4, V15)
+
+Standard LLMs write imperative scripts. Principal Grade writes declarative, drift-resistant definitions.
+
+### 7.1 ❌ Before (LLM Default)
+
+```bash
+# setup.sh
+aws s3 mb s3://my-bucket
+aws s3api put-bucket-versioning --bucket my-bucket --versioning-configuration Status=Enabled
+```
+
+### 7.2 ✅ After (Principal Grade)
+
+```hcl
+# main.tf
+resource "aws_s3_bucket" "vault" {
+  bucket = "my-principal-vault"
+
+  lifecycle {
+    prevent_destroy = true # V22: Non-destructive by default
+  }
+}
+
+resource "aws_s3_bucket_versioning" "vault" {
+  bucket = aws_s3_bucket.vault.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+```
+
+---
+
+## 8. PII Leakage → Automated Masking (S11)
+
+Standard LLMs log raw objects. Principal Grade implements a "Scrubbing" layer.
+
+### 8.1 ❌ Before (LLM Default)
+
+```typescript
+async function login(user: User) {
+  logger.info("User login attempt", { user });
+  // ⚡ LEAK: Logs passwords, emails, and tokens in plain text.
+}
+```
+
+### 8.2 ✅ After (Principal Grade)
+
+```typescript
+function mask(obj: any): any {
+  const SENSITIVE_KEYS = ["email", "password", "token", "secret"];
+  return JSON.parse(
+    JSON.stringify(obj, (key, value) =>
+      SENSITIVE_KEYS.includes(key.toLowerCase()) ? "***MASKED***" : value,
+    ),
+  );
+}
+
+async function login(user: User) {
+  logger.info("USER_LOGIN_ATTEMPT", { user: mask(user) });
+}
+```
+
+---
+
+## 9. Silent Drift → Atomic State Verification (V27)
+
+Standard LLMs assume the cache/local state is correct. Principal Grade verifies.
+
+### 9.1 ❌ Before (LLM Default)
+
+```typescript
+async function getBalance(userId: string) {
+  const cached = await redis.get(`bal:${userId}`);
+  return cached ?? (await db.user.getBalance(userId));
+}
+```
+
+### 9.2 ✅ After (Principal Grade)
+
+```typescript
+async function getBalance(userId: string) {
+  // V27: Awareness of Eventual Consistency
+  const cached = await redis.get(`bal:${userId}`);
+  if (cached && !isStale(cached)) return cached;
+
+  const actual = await db.user.getBalance(userId);
+  await redis.set(`bal:${userId}`, actual, { EX: 60 });
+  return actual;
+}
+```
+
+---
+
+## 10. The "Big Bang" Refactor → Surgical Parceling (S4)
+
+Standard LLMs try to fix everything at once. Principal Grade parcels changes.
+
+### 10.1 ❌ Before (LLM Default)
+
+```bash
+# One massive PR
+Modified: 14 files
+Changes:
+- Renamed User to Member
+- Added 'status' field to DB
+- Updated Auth logic
+- Fixed 4 unrelated lints
+```
+
+### 10.2 ✅ After (Principal Grade)
+
+```bash
+# PR 1: Schema Migration (feat)
+# PR 2: Rename User to Member (refactor - isolated)
+# PR 3: Auth logic update (feat)
 ```
