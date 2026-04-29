@@ -30,3 +30,13 @@ Thumbs.db
 
 # Project Specific
 dist/system-prompt.md
+
+# AI Agent Skill Evals
+**/workspace/
+**/iteration-*/
+feedback.json
+benchmark.json
+benchmark.md
+timing.json
+grading.json
+eval_metadata.json

@@ -1,0 +1,26 @@
+{
+  "skill_name": "posture-workflows",
+  "evals": [
+    {
+      "id": 1,
+      "name": "greenfield-secure-release",
+      "prompt": "I need a GitHub Actions workflow that triggers when I push a tag. It should build my TypeScript project, generate a changelog using git-cliff, and create a GitHub release. Make it as secure as possible.",
+      "expected_output": "A .yml file with scoped permissions, SHA-pinned actions, and OIDC for releases.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "brownfield-hardening",
+      "prompt": "Update this workflow to be secure: \nname: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm install && npm test",
+      "expected_output": "Refactored workflow with specific permissions, SHA pinning, and Harden Runner integration.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "optimization-challenge",
+      "prompt": "Our CI is taking 10 minutes. Most of the time is spent in `npm install`. Can you optimize this workflow for speed while maintaining SLSA 3 compliance?",
+      "expected_output": "Workflow with pnpm/npm caching, parallel jobs, and provenance generation.",
+      "files": []
+    }
+  ]
+}

@@ -20,10 +20,11 @@ The non-negotiable foundation of all engineering activity.
 - **Meta-Rules (The Lens)**: Cognitive filters for substrate-independence and official-docs-first discovery.
 - **Voice Contract**: A strict psychological agreement on zero-filler communication and surgical intent.
 
-### 2. Specialized Postures (`posture-backend`, `posture-frontend`)
+### 2. Specialized Postures (`posture-backend`, `posture-frontend`, `posture-workflows`)
 Domain-specific rigor for complex systems.
 - **Systems Grade (Backend)**: Atomic transactions, jittered resilience, and O(n) border safety.
 - **UX Grade (Frontend)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
+- **Automation Grade (Workflows)**: OIDC identity, runner hardening, and SLSA 3 integrity.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **9 architectural references** into a single, high-density system prompt.
@@ -47,6 +48,11 @@ npx skills add chitrank2050/agent-posture --skill posture-backend
 ### For Frontend Rigor
 ```bash
 npx skills add chitrank2050/agent-posture --skill posture-frontend
+```
+
+### For Automation/Workflows Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-workflows
 ```
 
 ### For Developers (Compilation & Validation)
