@@ -4,64 +4,83 @@
 [![Validated](https://img.shields.io/badge/Registry-Validated-success?style=for-the-badge)](./tools/validate.ts)
 [![Security: SLSA 3](https://img.shields.io/badge/Security-SLSA_3-blue?style=for-the-badge)](./.github/workflows/release-finalize.yml)
 
-> **"Move beyond mere 'skills' to a full Principal Engineering specification."**
+> **"From mere code generators to Principal Engineering specifications."**
 
-Agent Posture is a high-rigor, spec-driven framework for AI Agents. It transforms the agent from a "Code Generator" into a **Principal Engineer** by enforcing a 77-anchor constitution, multi-layer validation, and a "Skeptic's Posture."
-
----
-
-## 🏛️ Architecture
-
-The framework is divided into two distinct layers to ensure both broad alignment and deep technical rigor:
-
-### 1. Core Posture (`skills/core/`)
-The foundational logic that governs **every** interaction.
-- **posture-core**: 77 atomic engineering anchors (V1-V36, S1-S41).
-- **The Voice Contract (Ref 03)**: A strict psychological agreement.
-
-### 2. Domain Addons (`skills/backend/`, `skills/frontend/`)
-Specialized technical specifications for complex systems.
-- **posture-backend**: 150+ lines of rigor covering transactions and observability.
-- **posture-frontend**: React/Next.js performance and accessibility specs.
+**Agent Posture** is a high-rigor, spec-driven framework for AI Agents. It transcends standard "skills" by enforcing a **77-anchor constitution**, multi-layer verification, and an authoritative "Skeptic's Posture."
 
 ---
 
-## 🚀 Installation & Usage
+## 🏛️ The Three-Layer Architecture
 
-### For Developers
-Clone and validate the repository locally:
+We divide engineering rigor into three distinct layers to ensure both broad alignment and deep technical execution:
+
+### 1. The Core Lens (`posture-core`)
+The non-negotiable foundation of all engineering activity.
+- **77-Point Dossier**: Atomic engineering anchors (V1-V36, S1-S41).
+- **Meta-Rules (The Lens)**: Cognitive filters for substrate-independence and official-docs-first discovery.
+- **Voice Contract**: A strict psychological agreement on zero-filler communication and surgical intent.
+
+### 2. Specialized Postures (`posture-backend`, `posture-frontend`)
+Domain-specific rigor for complex systems.
+- **Systems Grade (Backend)**: Atomic transactions, jittered resilience, and O(n) border safety.
+- **UX Grade (Frontend)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
+
+### 3. The Compiled Constitution
+Our unique compiler merges core directives and **9 architectural references** into a single, high-density system prompt.
+- **Effect**: The agent isn't just following a list; it carries the full "Principal Mindset" in its active context.
+
+---
+
+## 🚀 Quick Start
+
+### For Principal Agents
+Add the core posture to your global agentic environment:
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-core
+```
+
+### For Systems/Backend Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-backend
+```
+
+### For Frontend Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-frontend
+```
+
+### For Developers (Compilation & Validation)
 ```bash
 git clone https://github.com/chitrank2050/agent-posture.git
 pnpm install
-pnpm run validate
-```
-
-### For AI Agents
-Add this posture to your global agentic environment:
-```bash
-npx skills add chitrank2050/agent-posture
+pnpm run validate         # Verify skill integrity
+pnpm run compile backend  # Build the 35KB Constitution
 ```
 
 ---
 
-## 💎 The Principal Constitution (Ref 00)
-Every commit and decision in this repo is anchored to the **Dossier**. Key indices include:
-- **V1: Atomic Mutation** - No partial state. Writes are 100% or 0%.
-- **V9: Validation at the Border** - Trust nothing external; verify all boundaries.
-- **S5: Zod-at-Border** - Enforced runtime validation for all external inputs.
-- **S33: Barrel File Prevention** - Zero-tolerance for tree-shaking killers.
+## 💎 Key Constitution Indices (The Dossier)
+
+| Index | Value | Principle |
+| :--- | :--- | :--- |
+| **V1** | **Atomic Mutation** | Writes are 100% or 0%. No partial state corruption. |
+| **V30** | **Zero-Assumption** | Scout the substrate and era before the first commit. |
+| **S5** | **Zod-at-Border** | Enforce runtime validation for all external inputs. |
+| **S14** | **Jittered Retries** | Exponential backoff with randomness for all I/O. |
+| **S33** | **Barrel File Prevention** | Zero-tolerance for tree-shaking killers. |
 
 ---
 
-## 🛡️ Governance & Quality
-- **Supply Chain Security**: All releases are signed with **SLSA Build Provenance** attestations.
-- **Git Hygiene**: Conventional Commits and branch naming are strictly enforced via `git-hygiene`.
-- **Pre-commit Rigor**: Lefthook manages ESLint, Prettier, and security scans locally.
+## 🛡️ Rigor & Governance
+
+- **Self-Verification Gate**: Mandatory pre-submission checklist for Types, Data, Security, and Shape.
+- **The Halt Signal**: The agent is instructed to **HALT** if it detects a Tier 1 Anti-Pattern (e.g., Check-then-Act races).
+- **Surgical Intent**: Every Pull Request follows a strict anatomy: Intent → Boundary → RCA → Approach → Verification.
 
 ---
 
 ## 🤝 Contributing
-We welcome contributions that fill "Skill Gaps" or refine the Dossier. Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) and ensure your PR passes the **Posture Compliance** checklist.
+We welcome contributions that refine the Dossier or expand Domain Postures. Please read our [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## 📄 License
 MIT © [Chitrank Agnihotri](https://www.chitrankagnihotri.com)
