@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-testing",
+  "evals": [
+    {
+      "id": 1,
+      "name": "integration-parity",
+      "prompt": "Write a test for the 'UserSignup' service.",
+      "expected_output": "A test that uses a real test database (via Docker/Postgres) rather than a Prisma mock."
+    },
+    {
+      "id": 2,
+      "name": "edge-case-focus",
+      "prompt": "Test the 'PaymentProcessing' function.",
+      "expected_output": "Multiple tests covering: Insufficient funds, network timeout, and invalid card data."
+    }
+  ]
+}

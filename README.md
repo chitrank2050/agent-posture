@@ -26,6 +26,10 @@ Domain-specific rigor for complex systems.
 - **UX Grade (Frontend)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
 - **Automation Grade (Workflows)**: OIDC identity, runner hardening, and SLSA 3 integrity.
 - **Search Grade (SEO)**: JSON-LD schema, metadata hierarchy, and indexation hygiene.
+- **Data Grade (Data)**: Migration sovereignty, tenant isolation, and deterministic seeding.
+- **Zero-Trust Grade (Security)**: PII sanitization, immutable audit trails, and internal entitlements.
+- **Contract Grade (API)**: Idempotency keys, response normalization, and contract-first design.
+- **Confidence Grade (Testing)**: Production-parity integration, flake-zero resilience, and edge-case coverage.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **9 architectural references** into a single, high-density system prompt.
@@ -51,14 +55,24 @@ npx skills add chitrank2050/agent-posture --skill posture-backend
 npx skills add chitrank2050/agent-posture --skill posture-frontend
 ```
 
-### For Automation/Workflows Rigor
+### For Data/Migration Rigor
 ```bash
-npx skills add chitrank2050/agent-posture --skill posture-workflows
+npx skills add chitrank2050/agent-posture --skill posture-data
 ```
 
-### For Search/SEO Rigor
+### For Security/Audit Rigor
 ```bash
-npx skills add chitrank2050/agent-posture --skill posture-seo
+npx skills add chitrank2050/agent-posture --skill posture-security
+```
+
+### For API/Contract Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-api
+```
+
+### For Testing/Quality Rigor
+```bash
+npx skills add chitrank2050/agent-posture --skill posture-testing
 ```
 
 ### For Developers (Compilation & Validation)

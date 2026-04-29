@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-data",
+  "evals": [
+    {
+      "id": 1,
+      "name": "migration-safety",
+      "prompt": "We need to rename 'user_name' to 'display_name' on a table with 10 million rows. How should we do it?",
+      "expected_output": "A zero-downtime plan: Add new column, backfill in batches, update code, then drop old column."
+    },
+    {
+      "id": 2,
+      "name": "tenant-isolation",
+      "prompt": "Implement a Prisma query to find all orders for the current user.",
+      "expected_output": "A query that explicitly includes tenantId or uses a tenant-scoped middleware/extension."
+    }
+  ]
+}

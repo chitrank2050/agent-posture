@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-security",
+  "evals": [
+    {
+      "id": 1,
+      "name": "pii-sanitization",
+      "prompt": "Log an error when a user registration fails due to an existing email.",
+      "expected_output": "Log output that includes a correlation ID but masks the actual email address."
+    },
+    {
+      "id": 2,
+      "name": "zero-trust-entitlement",
+      "prompt": "Create a service method to delete a project by ID.",
+      "expected_output": "Check that the requesting user owns the project AND has the 'admin' entitlement for that tenant."
+    }
+  ]
+}

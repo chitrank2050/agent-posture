@@ -1,0 +1,17 @@
+{
+  "skill_name": "posture-api",
+  "evals": [
+    {
+      "id": 1,
+      "name": "idempotent-creation",
+      "prompt": "Design a POST endpoint to create a subscription.",
+      "expected_output": "Support for an Idempotency-Key header and a check for existing requests."
+    },
+    {
+      "id": 2,
+      "name": "normalized-envelope",
+      "prompt": "Return an error when a user is not found.",
+      "expected_output": "A 404 response with a standard { status: 'error', error: { ... } } JSON body."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+---
+name: posture-data
+version: 1.0.0
+description: Data-Grade technical posture. Activate this for any task involving Databases, Prisma, Migrations, or Data Modeling. Enforce schema integrity, multi-tenant isolation, and deterministic seeding. If it's in the DB, it must be immutable and isolated.
+extends: posture-core
+author: chitrank2050
+---
+
+# Technical Data Posture 🗄️🛡️
+
+> **"Code is transient; data is forever. Treat the schema as the project's permanent constitution."**
+
+This addon is triggered for any task involving Database Schemas, Prisma, Migrations, Multi-tenancy, or Seeding. It extends the Core Posture with data-layer rigor.
+
+## When to use
+
+Load this skill when:
+
+- You are modifying `schema.prisma` or SQL DDL files.
+- The task involves creating or reviewing database migrations.
+- You are implementing multi-tenant data isolation (Row Level Security).
+- The work involves data seeding, large-scale mutations, or indexing.
+- You are optimizing query performance (N+1, EXPLAIN ANALYZE).
+
+## Operating Rules (R1–R5)
+
+### R1 - Migration Sovereignty (V1, V7, S30)
+
+Production data is sacred. **Hard-Ban:** Never use `db push` or untracked schema changes. Every mutation must ship as a named, version-controlled migration. For large tables, migrations must be "Zero-Downtime" (e.g., add column, then backfill, then drop old).
+
+### R2 - The "Tenant-First" Invariant (V34, S19)
+
+Multi-tenant isolation is a core safety invariant. Every queryable entity MUST have a `tenantId`. Enforce isolation at the infrastructure layer using Prisma middleware or extensions to automatically inject `tenantId` into every `find`, `update`, and `delete` operation.
+
+### R3 - Deterministic Seeding & Parity (V20, S20)
+
+Developer environments must be clones of reality. Use deterministic seed scripts that populate all necessary relations. Avoid "Magic IDs"; use stable references or lookup-based seeding to ensure environment parity.
+
+### R4 - Index-Aware Modeling (V2, S31)
+
+No entity ships without an indexing strategy. Foreign keys, sort columns, and filterable fields MUST have indexes. Use **Keyset Pagination** (cursor-based) for all collection endpoints to prevent OOM and performance degradation on large datasets.
+
+### R5 - Atomic Boundaries (V7, S19)
+
+Multi-entity state changes MUST be wrapped in a database transaction. Reach for `onConflict` and `upsert` to handle race conditions. Business logic that spans multiple DB calls must be audited for "Partial Failure" risks.
+
+## Data Self-Verification Gate
+
+- [ ] **Isolation**: Is `tenantId` enforced for this mutation?
+- [ ] **Safety**: Is this a named migration? Does it avoid breaking changes to existing data?
+- [ ] **Performance**: Are all foreign keys and filter columns indexed?
+- [ ] **Atomicity**: Is this multi-step change wrapped in a transaction?
+- [ ] **Parity**: Has the seed script been updated for new required fields?
