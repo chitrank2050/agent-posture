@@ -3,9 +3,9 @@
 [![Principal Grade](https://img.shields.io/badge/Posture-Principal_Grade-blueviolet?style=for-the-badge)](https://skills.sh/r/chitrank2050/agent-posture)
 [![Validated](https://img.shields.io/badge/Registry-Validated-success?style=for-the-badge)](./tools/validate.ts)
 [![Toolchain: Native Node](https://img.shields.io/badge/Toolchain-Native_Node_24-green?style=for-the-badge)](./package.json)
-[![Security: Tier 0 Protected](https://img.shields.io/badge/Security-Tier_0_Protected-black?style=for-the-badge)](./skills/core/references/05-anti-patterns.md)
+[![Security: Tier 0 Protected](https://img.shields.io/badge/Security-Tier_0_Protected-black?style=for-the-badge)](./skills/posture-core/references/05-anti-patterns.md)
 
-**Agent Posture** is a high-rigor, spec-driven framework for AI Agents. It transcends standard "skills" by enforcing an **Eleven-Pillar Constitution**, multi-layer verification, and an authoritative "Skeptic's Posture." It is built for Principal Engineers who require agents to think like architects, not just coders.
+**Agent Posture** is a high-rigor, spec-driven framework for AI Agents. It transcends standard "skills" by enforcing a **15-Pillar Constitution**, multi-layer verification, and an authoritative "Skeptic's Posture." It is built for Principal Engineers who require agents to think like architects, not just coders.
 
 ---
 
@@ -22,18 +22,20 @@ The non-negotiable foundation of all engineering activity.
 ### 2. Specialized Postures
 Domain-specific rigor for complex systems. Each pillar is mapped to the Core Dossier but provides specialized operating rules.
 
-- **Systems Grade (Backend)**: Atomic transactions, jittered resilience, and O(n) border safety.
-- **UX Grade (Frontend)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
-- **Automation Grade (Workflows)**: OIDC identity, runner hardening, and SLSA 3 integrity.
-- **Search Grade (SEO)**: JSON-LD schema, metadata hierarchy, and indexation hygiene.
-- **Data Grade (Data)**: Migration sovereignty, tenant isolation, and deterministic seeding.
-- **Zero-Trust Grade (Security)**: PII sanitization, immutable audit trails, and internal entitlements.
-- **Contract Grade (API)**: Idempotency keys, response normalization, and contract-first design.
-- **Confidence Grade (Testing)**: Production-parity integration, flake-zero resilience, and edge-case focus.
-- **Production-Mirror Grade (Infra)**: Health-aware orchestration, resource constraints, and rationale-driven config.
-- **Communication Grade (Docs)**: Rationale-first documentation, intent-driven diagrams, and zero-stale ADRs.
-- **Spec Grade (README)**: Professional Azure-style structure, GFM admonitions, and author signatures.
-- **History Grade (Changelog)**: Conventional commit mapping, semantic sectioning, and constitutional attribution.
+- **Systems Grade (`posture-backend`)**: Atomic transactions, jittered resilience, and O(n) border safety.
+- **UX Grade (`posture-frontend`)**: State-as-URL truth, hydration hygiene, and CLS-zero layout integrity.
+- **Automation Grade (`posture-workflows`)**: OIDC identity, runner hardening, and SLSA 3 integrity.
+- **Search Grade (`posture-seo`)**: JSON-LD schema, metadata hierarchy, and indexation hygiene.
+- **Data Grade (`posture-data`)**: Migration sovereignty, tenant isolation, and deterministic seeding.
+- **Zero-Trust Grade (`posture-security`)**: PII sanitization, immutable audit trails, and internal entitlements.
+- **Contract Grade (`posture-api`)**: Idempotency keys, response normalization, and contract-first design.
+- **Confidence Grade (`posture-testing`)**: Production-parity integration, flake-zero resilience, and edge-case focus.
+- **Production-Mirror Grade (`posture-infra`)**: Health-aware orchestration, resource constraints, and rationale-driven config.
+- **Communication Grade (`posture-docs`)**: Rationale-first documentation, intent-driven diagrams, and zero-stale ADRs.
+- **Spec Grade (`posture-readme`)**: Professional Azure-style structure, GFM admonitions, and author signatures.
+- **History Grade (`posture-changelog`)**: Conventional commit mapping, semantic sectioning, and constitutional attribution.
+- **Container Grade (`posture-docker`)**: Multi-stage mandates, non-root sovereignty, and deterministic layer caching.
+- **Meta Grade (`posture-skill-creator`)**: The architectural standard for authoring new engineering skills.
 
 ### 3. The Compiled Constitution
 Our unique compiler merges core directives and **10 Architectural References** into a single, high-density system prompt (`dist/system-prompt.md`).
@@ -72,12 +74,12 @@ Our unique compiler merges core directives and **10 Architectural References** i
 # Add the core engineering mind
 npx skills add chitrank2050/agent-posture --skill posture-core
 
-# Add the complete Eleven-Pillar constitution
+# Add the complete 15-Pillar constitution
 npx skills add chitrank2050/agent-posture --skill \
   posture-core posture-backend posture-frontend posture-workflows \
   posture-seo posture-data posture-security posture-api \
   posture-testing posture-infra posture-docs posture-readme \
-  posture-changelog
+  posture-changelog posture-docker posture-skill-creator
 ```
 
 ### Local Development
@@ -86,7 +88,7 @@ npx skills add chitrank2050/agent-posture --skill \
 # Install (Zero External Dependencies)
 pnpm install
 
-# Validate all 11 skills against the Zod schema
+# Validate all 15 skills against the Zod schema
 pnpm run validate
 
 # Compile the full constitution into a single system prompt
