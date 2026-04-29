@@ -17,14 +17,6 @@
     "url": "https://github.com/chitrank/agent-posture/issues"
   },
   "main": "index.js",
-  "scripts": {
-    "validate": "ts-node tools/validate.ts",
-    "lint:md": "markdownlint '**/*.md' --fix",
-    "format": "prettier --write .",
-    "compile": "ts-node tools/compile.ts",
-    "prepare": "lefthook install",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "ai-agents",
     "engineering-rigor",
@@ -34,6 +26,14 @@
     "llm-instructions",
     "agentic-workflow"
   ],
+  "scripts": {
+    "validate": "ts-node tools/validate.ts",
+    "lint:md": "markdownlint '**/*.md' --fix",
+    "format": "prettier --write .",
+    "compile": "ts-node tools/compile.ts",
+    "prepare": "lefthook install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "zod": "^3.23.8",
     "gray-matter": "^4.0.3"
