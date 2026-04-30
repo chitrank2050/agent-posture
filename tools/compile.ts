@@ -26,7 +26,7 @@ function compile() {
   });
 
   const addonName = values.addon || positionals[0];
-  const coreDir = path.join(__dirname, '../skills/core');
+  const coreDir = path.join(__dirname, '../skills/posture-core');
   const corePath = path.join(coreDir, 'SKILL.md');
 
   if (!fs.existsSync(corePath)) {
@@ -54,10 +54,16 @@ function compile() {
 
   // Include Addon if specified
   if (addonName) {
-    const addonPath = path.join(__dirname, `../skills/${addonName}/SKILL.md`);
+    // Support both 'api' and 'posture-api'
+    const name = addonName.startsWith('posture-')
+      ? addonName
+      : `posture-${addonName}`;
+    const addonPath = path.join(__dirname, `../skills/${name}/SKILL.md`);
     if (fs.existsSync(addonPath)) {
       const addon = matter(fs.readFileSync(addonPath, 'utf8'));
-      finalPrompt += `\n[${addonName.toUpperCase()} ADDON]\n${addon.content}`;
+      finalPrompt += `\n[${name.toUpperCase()} ADDON]\n${addon.content}`;
+    } else {
+      console.error(`❌ Error: Addon not found at ${addonPath}`);
     }
   }
 
