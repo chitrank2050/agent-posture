@@ -2,7 +2,7 @@
 name: posture-testing
 description: Quality-Grade technical posture. Activate this for any task involving Vitest, Playwright, E2E, or Coverage. Enforce Integration-First logic, Production-Parity environments, and mandatory edge-case coverage. If it's not tested, it's broken by design.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   extends: posture-core
   author: chitrank2050
 ---

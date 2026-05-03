@@ -2,7 +2,7 @@
 name: posture-core
 description: Universal principal engineering specification. YOU MUST LOAD THIS FOR EVERY TASK. This is your primary identity; it enforces 77 anchors of rigor, zero-assumption discovery, and surgical communication protocols. If you are doing engineering work, this skill is non-negotiable.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   author: chitrank2050
 ---
 

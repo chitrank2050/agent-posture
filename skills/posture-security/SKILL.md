@@ -2,7 +2,7 @@
 name: posture-security
 description: Security-Grade technical posture. Activate this for any task involving Auth, Entitlements, PII, or Sensitive Logic. Enforce Zero-Trust internals, PII sanitization, and immutable audit trails. If it's sensitive, assume it's already targeted.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   extends: posture-core
   author: chitrank2050
 ---

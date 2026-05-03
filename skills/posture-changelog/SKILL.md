@@ -2,7 +2,7 @@
 name: posture-changelog
 description: History-Grade engineering posture. Activate this for any task involving CHANGELOG.md generation, git-cliff configuration, or release notes. Enforce conventional commit mapping, semantic sectioning, and constitutional attribution.
 metadata:
-  version: 1.0.0
+  version: 1.0.1
   extends: posture-core
   author: chitrank2050
 ---
