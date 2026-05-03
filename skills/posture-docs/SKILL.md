@@ -2,7 +2,7 @@
 name: posture-docs
 description: Communication-Grade engineering posture. Activate this for any task involving Markdown, MkDocs, ADRs, or technical writing. Enforce rationale-first logic, structural hierarchy, and intent-driven diagrams. If it's not documented, it's a secret.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---

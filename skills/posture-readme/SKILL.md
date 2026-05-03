@@ -2,7 +2,7 @@
 name: posture-readme
 description: Communication-Grade documentation posture. Activate this for generating or auditing README.md files. Enforce professional Azure/Microsoft structure, GFM admonitions, and zero-filler surgical intent. If it's not documented with rigor, it's not Principal Grade.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---

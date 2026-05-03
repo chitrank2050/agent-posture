@@ -2,7 +2,7 @@
 name: posture-backend
 description: Systems-Grade engineering posture. Activate this whenever a task touches APIs, Databases, Queues, or Distributed Systems. Enforce atomic mutations and jittered resilience even if the user didn't explicitly ask for them. If it runs on a server, use this skill.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---
@@ -56,3 +56,10 @@ O(n) at the border; O(n^2) is a hard stop for client-provided inputs. Reach for 
 - **Schemas:** Kleppmann (DDIA) - Reliability & Maintainability.
 - **APIs:** Richardson Maturity Model (Aim for Level 3).
 - **Concurrency:** Herlihy - Linearizability and atomicity.
+
+## Deep Reference Library
+
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `../posture-core/references/07-runtime-coherence.md` - Edge vs. Persistent Server primitives.
+- `../posture-core/references/09-calibration-diffs.md` - Backend Before vs. After examples.

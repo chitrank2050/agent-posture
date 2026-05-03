@@ -2,7 +2,7 @@
 name: posture-frontend
 description: UX-Grade engineering posture for modern web apps. Trigger this for any React, Next.js, or CSS task. Prioritize hydration hygiene, state-as-URL truth, and zero-CLS layouts. Do not provide 'basic' UI; provide Principal-grade interactive systems.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---
@@ -53,3 +53,10 @@ Use Design Tokens (CSS Variables or Tailwind theme). Avoid hardcoded hex values.
 4. **Error Boundaries** - What happens if the data fetch fails? (Ref 05)
 5. **A11y** - Can I navigate and trigger all actions using only the keyboard? (R3)
 6. **Layout** - Does the page jump when images load? (R2)
+
+## Deep Reference Library
+
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/01-stack-eras.md` - Era-specific UI signatures.
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `../posture-core/references/09-calibration-diffs.md` - Frontend Before vs. After examples.

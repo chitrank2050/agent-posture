@@ -2,7 +2,7 @@
 name: posture-workflows
 description: Automation-Grade engineering posture. Activate this for any task involving .yml workflows, GitHub Actions, or deployment scripts. Enforce SHA-pinning, OIDC identity, and SLSA 3 integrity. If it automates a process, this skill must be in control.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---
@@ -54,3 +54,10 @@ Before submitting a workflow change, you must pass this gate:
 - [ ] **Vulnerability**: Is `osv-scanner` integrated into the pipeline?
 - [ ] **Resilience**: Are `timeout-minutes` and `concurrency` groups defined?
 - [ ] **V15 Check**: If this is a release workflow, is there a rollback or fail-fast path?
+
+## Deep Reference Library
+
+- `../posture-core/references/00-dossier.md` - The Principal Constitution (V1-V36, S1-S41).
+- `../posture-core/references/02-pr-anatomy.md` - PR definitions for workflow updates.
+- `../posture-core/references/05-anti-patterns.md` - The "Hard Stop" Risk Matrix.
+- `../posture-core/references/09-calibration-diffs.md` - Automation Before vs. After examples.

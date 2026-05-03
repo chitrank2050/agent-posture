@@ -2,7 +2,7 @@
 name: posture-seo
 description: SEO-Grade technical posture. Trigger this for any task involving metadata, indexation, structured data, or search engine visibility. Enforce JSON-LD, Sitemap hygiene, and H1-H6 hierarchy. If it's on the public web, it must be optimized.
 metadata:
-  version: 1.0.1
+  version: 1.0.2
   extends: posture-core
   author: chitrank2050
 ---
