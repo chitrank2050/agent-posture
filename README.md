@@ -14,12 +14,15 @@
 We divide engineering rigor into three distinct layers to ensure both broad alignment and deep technical execution.
 
 ### 1. The Core Lens (`posture-core`)
+
 The non-negotiable foundation of all engineering activity.
+
 - **77-Point Dossier**: Atomic engineering anchors (V1-V36, S1-S41) serving as the "ground truth" for all logic.
 - **Meta-Rules (The Lens)**: Cognitive filters for substrate-independence and official-docs-first discovery.
 - **Voice Contract**: A strict agreement on zero-filler communication and surgical intent.
 
 ### 2. Specialized Postures
+
 Domain-specific rigor for complex systems. Each pillar is mapped to the Core Dossier but provides specialized operating rules.
 
 - **Systems Grade (`posture-backend`)**: Atomic transactions, jittered resilience, and O(n) border safety.
@@ -38,7 +41,9 @@ Domain-specific rigor for complex systems. Each pillar is mapped to the Core Dos
 - **Meta Grade (`posture-skill-creator`)**: The architectural standard for authoring new engineering skills.
 
 ### 3. The Compiled Constitution
+
 Our unique compiler merges core directives and **10 Architectural References** into a single, high-density system prompt (`dist/system-prompt.md`).
+
 - **Effect**: The agent carries the full "Principal Mindset" in its active context, enabling autonomous yet governed engineering.
 
 ---
@@ -100,6 +105,7 @@ pnpm run compile [addon-name]
 ## 📜 Reference Library
 
 The framework is supported by 10 high-density reference files:
+
 - `Ref 00`: The 77-Point Dossier (Atomic Anchors).
 - `Ref 05`: The Anti-Pattern Protocol (Hard Stops).
 - `Ref 09`: Calibration Diffs (Before/After logic).

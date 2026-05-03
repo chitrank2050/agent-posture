@@ -17,12 +17,14 @@ By participating in this project, you agree to abide by our Code of Conduct (sta
 ### Local Setup
 
 1. **Clone the repo**:
+
    ```bash
    git clone https://github.com/chitrank2050/agent-posture.git
    cd agent-posture
    ```
 
 2. **Install dependencies**:
+
    ```bash
    pnpm install
    ```

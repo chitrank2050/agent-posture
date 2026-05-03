@@ -25,7 +25,15 @@ function compile() {
     allowPositionals: true,
   });
 
-  const addonName = values.addon || positionals[0];
+  // Determine which addons to include
+  let addonsToInclude: string[] = [];
+
+  if (values.addon) {
+    addonsToInclude.push(values.addon);
+  }
+  if (positionals.length > 0) {
+    addonsToInclude.push(...positionals);
+  }
   const coreDir = path.join(__dirname, '../skills/posture-core');
   const corePath = path.join(coreDir, 'SKILL.md');
 
@@ -52,29 +60,53 @@ function compile() {
     }
   }
 
-  // Include Addon if specified
-  if (addonName) {
-    // Support both 'api' and 'posture-api'
-    const name = addonName.startsWith('posture-')
-      ? addonName
-      : `posture-${addonName}`;
-    const addonPath = path.join(__dirname, `../skills/${name}/SKILL.md`);
-    if (fs.existsSync(addonPath)) {
-      const addon = matter(fs.readFileSync(addonPath, 'utf8'));
-      finalPrompt += `\n[${name.toUpperCase()} ADDON]\n${addon.content}`;
-    } else {
-      console.error(`❌ Error: Addon not found at ${addonPath}`);
+  // Include Addons if specified
+  if (addonsToInclude.length > 0) {
+    if (addonsToInclude.includes('all')) {
+      const skillsDir = path.join(__dirname, '../skills');
+      if (fs.existsSync(skillsDir)) {
+        const allSkills = fs
+          .readdirSync(skillsDir)
+          .filter((f) => f.startsWith('posture-') && f !== 'posture-core');
+        addonsToInclude = allSkills;
+      }
+    }
+
+    // Deduplicate
+    addonsToInclude = [...new Set(addonsToInclude)];
+
+    for (const addonName of addonsToInclude) {
+      const name = addonName.startsWith('posture-')
+        ? addonName
+        : `posture-${addonName}`;
+      const addonPath = path.join(__dirname, `../skills/${name}/SKILL.md`);
+      if (fs.existsSync(addonPath)) {
+        const addon = matter(fs.readFileSync(addonPath, 'utf8'));
+        finalPrompt += `\n[${name.toUpperCase()} ADDON]\n${addon.content}\n`;
+      } else {
+        console.error(`❌ Error: Addon not found at ${addonPath}`);
+      }
     }
   }
 
-  const outputPath = path.join(__dirname, '../dist/system-prompt.md');
+  let outputFileName = 'system-prompt.md';
+  if (addonsToInclude.length === 0) {
+    outputFileName = 'posture-core-prompt.md';
+  } else if (addonsToInclude.length <= 3) {
+    const names = addonsToInclude.map((a) =>
+      a.startsWith('posture-') ? a.replace('posture-', '') : a,
+    );
+    outputFileName = `posture-${names.join('-')}-prompt.md`;
+  }
+
+  const outputPath = path.join(__dirname, `../dist/${outputFileName}`);
   if (!fs.existsSync(path.dirname(outputPath))) {
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   }
 
   fs.writeFileSync(outputPath, finalPrompt);
   console.log(
-    `${GREEN}${BOLD}✨ Compiled Full System Prompt to dist/system-prompt.md (${Math.round(finalPrompt.length / 1024)} KB)${RESET}`,
+    `${GREEN}${BOLD}✨ Compiled System Prompt to dist/${outputFileName} (${Math.round(finalPrompt.length / 1024)} KB)${RESET}`,
   );
 }
 
